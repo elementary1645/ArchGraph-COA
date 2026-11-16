@@ -1,0 +1,819 @@
+Internal ctest changing into directory: /workspaces/ArchGraph-COA/build/phase2-sanitize
+Test project /workspaces/ArchGraph-COA/build/phase2-sanitize
+      Start  1: project_info
+ 1/17 Test  #1: project_info .....................***Failed    0.06 sec
+==330==LeakSanitizer has encountered a fatal error.
+==330==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==330==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  2: openmp
+ 2/17 Test  #2: openmp ...........................***Failed    0.01 sec
+==332==LeakSanitizer has encountered a fatal error.
+==332==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==332==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  3: csr_graph
+ 3/17 Test  #3: csr_graph ........................***Failed    0.06 sec
+==335==LeakSanitizer has encountered a fatal error.
+==335==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==335==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  4: edge_list_io
+ 4/17 Test  #4: edge_list_io .....................***Failed    0.02 sec
+==337==LeakSanitizer has encountered a fatal error.
+==337==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==337==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  5: dijkstra
+ 5/17 Test  #5: dijkstra .........................***Failed    2.56 sec
+==339==LeakSanitizer has encountered a fatal error.
+==339==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==339==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  6: delta_stepping
+ 6/17 Test  #6: delta_stepping ...................***Failed    2.72 sec
+==341==LeakSanitizer has encountered a fatal error.
+==341==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==341==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  7: cli_help
+ 7/17 Test  #7: cli_help .........................***Failed    0.01 sec
+==350==LeakSanitizer has encountered a fatal error.
+==350==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==350==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  8: cli_version
+ 8/17 Test  #8: cli_version ......................***Failed    0.01 sec
+==352==LeakSanitizer has encountered a fatal error.
+==352==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==352==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start  9: cli_cpu
+ 9/17 Test  #9: cli_cpu ..........................***Failed    0.01 sec
+==354==LeakSanitizer has encountered a fatal error.
+==354==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==354==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start 10: cli_invalid
+10/17 Test #10: cli_invalid ......................   Passed    0.01 sec
+      Start 11: cli_sssp
+11/17 Test #11: cli_sssp .........................***Failed    0.02 sec
+CMake Error at /workspaces/ArchGraph-COA/tests/test_cli_sssp.cmake:11 (message):
+  Unexpected SSSP response: 1: : ==359==LeakSanitizer has encountered a fatal
+  error.
+
+  ==359==HINT: For debugging, try setting environment variable
+  LSAN_OPTIONS=verbosity=1:log_threads=1
+
+  ==359==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+
+
+
+      Start 12: workload_artifacts
+12/17 Test #12: workload_artifacts ...............   Passed    1.44 sec
+      Start 13: workload_loader
+13/17 Test #13: workload_loader ..................***Failed    0.56 sec
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='positive_uniform', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==377==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==377==LeakSanitizer has encountered a fatal error.\n==377==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==377==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='positive_uniform', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==379==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==379==LeakSanitizer has encountered a fatal error.\n==379==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==379==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='zero_inclusive', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==381==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==381==LeakSanitizer has encountered a fatal error.\n==381==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==381==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='zero_inclusive', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==383==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==383==LeakSanitizer has encountered a fatal error.\n==383==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==383==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='bimodal', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==385==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==385==LeakSanitizer has encountered a fatal error.\n==385==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==385==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='chain', weights='bimodal', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==387==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==387==LeakSanitizer has encountered a fatal error.\n==387==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==387==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='positive_uniform', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==389==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==389==LeakSanitizer has encountered a fatal error.\n==389==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==389==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='positive_uniform', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==391==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==391==LeakSanitizer has encountered a fatal error.\n==391==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==391==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='zero_inclusive', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==393==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==393==LeakSanitizer has encountered a fatal error.\n==393==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==393==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='zero_inclusive', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==395==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==395==LeakSanitizer has encountered a fatal error.\n==395==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==395==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='bimodal', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==397==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==397==LeakSanitizer has encountered a fatal error.\n==397==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==397==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='grid', weights='bimodal', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==399==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==399==LeakSanitizer has encountered a fatal error.\n==399==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==399==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='positive_uniform', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==401==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==401==LeakSanitizer has encountered a fatal error.\n==401==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==401==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='positive_uniform', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==403==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==403==LeakSanitizer has encountered a fatal error.\n==403==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==403==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='zero_inclusive', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==405==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==405==LeakSanitizer has encountered a fatal error.\n==405==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==405==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='zero_inclusive', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==407==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==407==LeakSanitizer has encountered a fatal error.\n==407==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==407==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='bimodal', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==409==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==409==LeakSanitizer has encountered a fatal error.\n==409==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==409==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='sparse_random', weights='bimodal', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==411==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==411==LeakSanitizer has encountered a fatal error.\n==411==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==411==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='positive_uniform', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==413==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==413==LeakSanitizer has encountered a fatal error.\n==413==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==413==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='positive_uniform', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==415==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==415==LeakSanitizer has encountered a fatal error.\n==415==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==415==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='zero_inclusive', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==417==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==417==LeakSanitizer has encountered a fatal error.\n==417==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==417==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='zero_inclusive', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==419==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==419==LeakSanitizer has encountered a fatal error.\n==419==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==419==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='bimodal', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==421==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==421==LeakSanitizer has encountered a fatal error.\n==421==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==421==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='layered', weights='bimodal', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==423==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==423==LeakSanitizer has encountered a fatal error.\n==423==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==423==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='positive_uniform', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==425==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==425==LeakSanitizer has encountered a fatal error.\n==425==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==425==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='positive_uniform', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==427==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==427==LeakSanitizer has encountered a fatal error.\n==427==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==427==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='zero_inclusive', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==429==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==429==LeakSanitizer has encountered a fatal error.\n==429==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==429==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='zero_inclusive', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==431==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==431==LeakSanitizer has encountered a fatal error.\n==431==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==431==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='bimodal', final=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==433==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==433==LeakSanitizer has encountered a fatal error.\n==433==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==433==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+======================================================================
+FAIL: test_families_distributions_and_final_states (__main__.LoaderTests.test_families_distributions_and_final_states) (family='disconnected', weights='bimodal', final=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_workload_loader.py", line 51, in test_families_distributions_and_final_states
+    self.assertEqual((process.returncode, process.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'==435==LeakSanitizer has encountered[189 chars])\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'==435==LeakSanitizer has encountered a fatal error.\n==435==HINT: For deb'
+-  b'ugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_thread'
+-  b's=1\n==435==HINT: LeakSanitizer does not work under ptrace (strace, gdb, '
+-  b'etc)\n')
+
+----------------------------------------------------------------------
+Ran 1 test in 0.452s
+
+FAILED (failures=30)
+
+      Start 14: benchmark_integration
+14/17 Test #14: benchmark_integration ............***Failed    0.13 sec
+==438==LeakSanitizer has encountered a fatal error.
+==438==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==438==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+E==440==LeakSanitizer has encountered a fatal error.
+==440==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==440==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+E
+======================================================================
+ERROR: test_metadata (__main__.BenchmarkTests.test_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_benchmark.py", line 13, in test_metadata
+    data = json.loads(subprocess.check_output([CLI, '--cpu']))
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/workspaces/ArchGraph-COA/build/phase2-sanitize/archgraph', '--cpu']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_verified_runs (__main__.BenchmarkTests.test_verified_runs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_benchmark.py", line 26, in test_verified_runs
+    data = json.loads(subprocess.check_output(args + ['--repetitions', '3', '--warmups', '1']))
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/workspaces/ArchGraph-COA/build/phase2-sanitize/archgraph', 'bench', '--input', '/tmp/tmpj2x_8a6v/graph.txt', '--source', '0', '--algorithm', 'dijkstra', '--repetitions', '3', '--warmups', '1']' returned non-zero exit status 1.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.048s
+
+FAILED (errors=2)
+
+      Start 15: perf_unit
+15/17 Test #15: perf_unit ........................***Failed    0.02 sec
+==442==LeakSanitizer has encountered a fatal error.
+==442==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==442==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+      Start 16: profiling_integration
+16/17 Test #16: profiling_integration ............***Failed    0.15 sec
+==445==LeakSanitizer has encountered a fatal error.
+==445==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==445==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+E==447==LeakSanitizer has encountered a fatal error.
+==447==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==447==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+E
+======================================================================
+ERROR: test_benchmarks (__main__.ProfilingTests.test_benchmarks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_profiling.py", line 33, in test_benchmarks
+    plain = self.command(*base, '--algorithm', 'dijkstra')
+  File "/workspaces/ArchGraph-COA/tests/test_profiling.py", line 15, in command
+    return json.loads(subprocess.check_output([CLI, *args]))
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/workspaces/ArchGraph-COA/build/phase2-sanitize/archgraph', 'bench', '--input', '/tmp/tmpvi00xghj/graph.txt', '--source', '0', '--repetitions', '4', '--warmups', '0', '--algorithm', 'dijkstra']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_diagnostic (__main__.ProfilingTests.test_diagnostic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/ArchGraph-COA/tests/test_profiling.py", line 18, in test_diagnostic
+    data = self.command('--counter-diagnostics')
+  File "/workspaces/ArchGraph-COA/tests/test_profiling.py", line 15, in command
+    return json.loads(subprocess.check_output([CLI, *args]))
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/workspaces/ArchGraph-COA/build/phase2-sanitize/archgraph', '--counter-diagnostics']' returned non-zero exit status 1.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.032s
+
+FAILED (errors=2)
+
+      Start 17: perf_hardware
+17/17 Test #17: perf_hardware ....................***Failed    0.01 sec
+==449==LeakSanitizer has encountered a fatal error.
+==449==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==449==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
+
+
+12% tests passed, 15 tests failed out of 17
+
+Label Time Summary:
+hardware    =   0.01 sec*proc (1 test)
+
+Total Test time (real) =   7.82 sec
+
+The following tests FAILED:
+	  1 - project_info (Failed)
+	  2 - openmp (Failed)
+	  3 - csr_graph (Failed)
+	  4 - edge_list_io (Failed)
+	  5 - dijkstra (Failed)
+	  6 - delta_stepping (Failed)
+	  7 - cli_help (Failed)
+	  8 - cli_version (Failed)
+	  9 - cli_cpu (Failed)
+	 11 - cli_sssp (Failed)
+	 13 - workload_loader (Failed)
+	 14 - benchmark_integration (Failed)
+	 15 - perf_unit (Failed)
+	 16 - profiling_integration (Failed)
+	 17 - perf_hardware (Failed)
+Errors while running CTest

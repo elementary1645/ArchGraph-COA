@@ -1,4 +1,5 @@
 #include "archgraph/analysis.hpp"
+#include "archgraph/perf.hpp"
 #include "archgraph/benchmark.hpp"
 #include "dynagraph/project_info.hpp"
 #include "dynagraph/algorithms/sssp.hpp"
@@ -12,6 +13,10 @@
 #include <string_view>
 
 int main(int argc, char* argv[]) {
+    if (argc == 2 && std::string_view(argv[1]) == "--counter-diagnostics") {
+        try { std::cout << archgraph::perf::diagnostics() << "\n"; return std::cout ? 0 : 2; }
+        catch (const std::exception& error) { std::cerr << error.what() << '\n'; return 2; }
+    }
     if (argc == 2 && std::string_view(argv[1]) == "--cpu") {
         std::cout << archgraph::cpu_metadata() << "\n";
         return std::cout ? 0 : 2;
@@ -30,9 +35,9 @@ int main(int argc, char* argv[]) {
                      "       archgraph sssp --input graph.txt --source 0 --algorithm delta-stepping --delta 16 [--threads 2]\n"
                      "Delta is positive uint64; threads is nonnegative int (0: runtime default).\n"
                      "SSSP emits JSON; unreachable distances are null.\n"
-                     "Usage: archgraph --cpu\n"
-                     "Usage: archgraph bench <SSSP options> [--repetitions 5] [--warmups 1]\n"
-                     "Bench reports verified steady-clock wall nanoseconds, never CPU cycles.\n";
+                     "Usage: archgraph --cpu | --counter-diagnostics\n"
+                     "Usage: archgraph bench <SSSP options> [--repetitions 5] [--warmups 1] [--hardware-counters]\n"
+                     "Bench reports verified wall nanoseconds; optional user-thread PMU counters support Dijkstra only.\n";
         return 0;
     }
 
@@ -52,6 +57,7 @@ int main(int argc, char* argv[]) {
         bool have_threads = false;
         unsigned repetitions = 5, warmups = 1;
         bool have_repetitions = false, have_warmups = false;
+        bool hardware_counters = false;
         const auto parse_unsigned = [](std::string_view value, auto& target) {
             if (value.empty() || value.front() < '0' || value.front() > '9') {
                 throw std::invalid_argument("Expected an unsigned decimal integer");
@@ -61,10 +67,14 @@ int main(int argc, char* argv[]) {
                 throw std::invalid_argument("Malformed or out-of-range unsigned decimal integer");
             }
         };
-        for (int i = 2; i < argc; i += 2) {
+        for (int i = 2; i < argc;) {
+            if (benchmark && std::string_view(argv[i]) == "--hardware-counters" && !hardware_counters) {
+                hardware_counters = true; ++i; continue;
+            }
             if (i + 1 >= argc) { throw std::invalid_argument("Missing option value"); }
             const std::string_view option(argv[i]);
             const std::string_view value(argv[i + 1]);
+            i += 2;
             if (benchmark && option == "--repetitions" && !have_repetitions) {
                 parse_unsigned(value, repetitions);
                 if (repetitions == 0 || repetitions > 10000) { throw std::invalid_argument("Repetitions must be in [1,10000]"); }
@@ -103,7 +113,7 @@ int main(int argc, char* argv[]) {
         }
         const auto graph = dynagraph::load_edge_list_file(input);
         if (benchmark) {
-            return archgraph::benchmark(graph, source, algorithm, delta, threads, repetitions, warmups, std::cout);
+            return archgraph::benchmark(graph, source, algorithm, delta, threads, repetitions, warmups, std::cout, hardware_counters);
         }
         dynagraph::DeltaSteppingMetrics metrics;
         const auto result = algorithm == "dijkstra" ? dynagraph::dijkstra(graph, source) :

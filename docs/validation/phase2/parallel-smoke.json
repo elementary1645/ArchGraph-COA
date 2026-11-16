@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "algorithm": "delta-stepping",
+  "status": "completed",
+  "source": 0,
+  "vertices": 8,
+  "edges": 7,
+  "delta": 16,
+  "requested_threads": 2,
+  "actual_threads": null,
+  "input_identity": {
+    "method": "fnv1a64-csr-le-u64-v1",
+    "value": "91e7fc35277d07af"
+  },
+  "warmups": 1,
+  "repetitions": 10,
+  "verified": true,
+  "unit": "wall_ns",
+  "median_wall_ns": 57095,
+  "samples": [
+    57456,
+    56544,
+    58827,
+    126999,
+    56734,
+    59087,
+    56544,
+    58848,
+    56705,
+    56474
+  ],
+  "hardware_counters_requested": true,
+  "counter_status": "unsupported_scope",
+  "measurement_scope": {
+    "hardware": "calling_thread_user_space",
+    "inherit": false,
+    "kernel": false,
+    "hypervisor": false,
+    "thread_aggregation": false,
+    "groups": [
+      [
+        "cpu_cycles",
+        "instructions"
+      ],
+      [
+        "cache_references",
+        "cache_misses"
+      ],
+      [
+        "branch_instructions",
+        "branch_misses"
+      ]
+    ]
+  },
+  "warnings": [
+    "Hardware counters are unsupported for delta-stepping; wall-clock and correctness checks still run."
+  ],
+  "runs": [
+    {
+      "index": 0,
+      "wall_ns": 57456,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 1,
+      "wall_ns": 56544,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 2,
+      "wall_ns": 58827,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 3,
+      "wall_ns": 126999,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 4,
+      "wall_ns": 56734,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 5,
+      "wall_ns": 59087,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 6,
+      "wall_ns": 56544,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 7,
+      "wall_ns": 58848,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 8,
+      "wall_ns": 56705,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 9,
+      "wall_ns": 56474,
+      "counter_status": "unsupported_scope",
+      "counters": {
+        "cpu_cycles": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "unsupported_scope",
+          "errno": 0,
+          "diagnostic": "OpenMP worker aggregation is not implemented; no caller-only proxy is collected",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    }
+  ],
+  "metadata": {
+    "schema_version": 1,
+    "cpu_model": " AMD EPYC 9V74 80-Core Processor",
+    "cpu_model_source": "/proc/cpuinfo",
+    "logical_cpu_hint": 2,
+    "openmp_max_threads": 2,
+    "openmp_spec": 201511,
+    "compiler": "13.3.0",
+    "build_type": "Release",
+    "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8",
+    "build_dirty": "true",
+    "compiler_flags": " -O3 -DNDEBUG; OpenMP=-fopenmp; warnings=-Wall -Wextra -Wpedantic -Wconversion -Wshadow; Werror=ON",
+    "clock": "std::chrono::steady_clock",
+    "hardware_counters_available": null
+  }
+}

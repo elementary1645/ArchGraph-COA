@@ -1,0 +1,6 @@
+#pragma once
+namespace archgraph::build {
+inline constexpr const char* revision = R"AG(@ARCHGRAPH_REVISION@)AG";
+inline constexpr const char* dirty = R"AG(@ARCHGRAPH_DIRTY@)AG";
+inline constexpr const char* flags = R"AG(@ARCHGRAPH_FLAGS@)AG";
+}

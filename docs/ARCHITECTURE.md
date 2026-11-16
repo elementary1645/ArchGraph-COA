@@ -48,5 +48,11 @@ this Phase 1 engine. CTest covers core, CLI, generator/loader and measurement co
 
 ## Future interfaces
 
-Performance-counter availability and collection, cache experiments, affinity-aware
-scaling and visualization belong to later phases. No counter backend is implemented.
+Phase 2 adds `include/archgraph/perf.hpp` and `src/profiling/perf.cpp`: a Linux
+perf_event_open backend, injectable syscall boundary, descriptor-owning sessions,
+three event-pair groups, validation/scaling and diagnostic JSON. Static benchmarks
+optionally collect calling-thread user-space counters for sequential Dijkstra;
+OpenMP hardware aggregation remains unsupported. Median wall time, per-run counter
+records, loaded-CSR identity and build provenance extend the existing JSON format.
+See CPU_PROFILING.md and PERFORMANCE_COUNTERS.md for exact scopes and boundaries.
+Cache experiments, affinity-aware scaling and visualization remain future work.

@@ -1,0 +1,22 @@
+[  3%] Building CXX object CMakeFiles/archgraph_engine.dir/src/profiling/perf.cpp.o
+[  6%] Linking CXX static library libarchgraph_engine.a
+[ 37%] Built target archgraph_engine
+[ 41%] Linking CXX executable test_project_info
+[ 44%] Linking CXX executable archgraph
+[ 48%] Built target test_project_info
+[ 51%] Linking CXX executable test_openmp
+[ 55%] Built target archgraph
+[ 58%] Linking CXX executable test_csr_graph
+[ 62%] Built target test_openmp
+[ 65%] Linking CXX executable test_edge_list_io
+[ 68%] Built target test_edge_list_io
+[ 72%] Built target test_csr_graph
+[ 75%] Linking CXX executable test_dijkstra
+[ 79%] Linking CXX executable test_delta_stepping
+[ 82%] Built target test_dijkstra
+[ 86%] Linking CXX executable test_perf
+[ 89%] Built target test_delta_stepping
+[ 93%] Building CXX object tests/CMakeFiles/test_perf_hardware.dir/test_perf_hardware.cpp.o
+[ 96%] Built target test_perf
+[100%] Linking CXX executable test_perf_hardware
+[100%] Built target test_perf_hardware
