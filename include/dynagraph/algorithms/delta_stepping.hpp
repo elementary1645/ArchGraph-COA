@@ -8,6 +8,7 @@ struct DeltaSteppingOptions {
     Distance delta; // Required: 1..UINT64_MAX.
     int thread_count = 0; // 0 uses omp_get_max_threads(); positive requests a team.
     WorkloadObservations* workload_observations = nullptr; // Explicit development opt-in.
+    int* observed_thread_count = nullptr; // Optional team-size output; no per-edge instrumentation.
 };
 
 struct DeltaSteppingThreadMetrics {

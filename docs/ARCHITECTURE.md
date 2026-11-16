@@ -24,8 +24,9 @@ performance counters. Adaptive and incremental SSSP are excluded.
 `src/analysis/cpu.cpp` reports CPU model from Linux `/proc/cpuinfo` where available,
 logical concurrency hint, OpenMP configuration/specification, compiler and build type.
 Unknown CPU model and hardware-counter availability are null. A concurrency hint
-of zero means the C++ runtime could not determine it. These facts do not establish
-physical-core count, affinity, exclusivity or runtime library version.
+of zero means the C++ runtime could not determine it. Phase 4 adds explicit
+affinity, visible physical topology and quota discovery; these do not establish
+exclusive resources or runtime library version.
 
 ## Experiment framework (implemented)
 
@@ -55,7 +56,7 @@ optionally collect calling-thread user-space counters for sequential Dijkstra;
 OpenMP hardware aggregation remains unsupported. Median wall time, per-run counter
 records, loaded-CSR identity and build provenance extend the existing JSON format.
 See CPU_PROFILING.md and PERFORMANCE_COUNTERS.md for exact scopes and boundaries.
-Affinity-aware scaling and visualization remain future work.
+Phase 4 adds thread scaling and kernel affinity experiments below; visualization remains future work.
 
 
 ## Phase 3 cache and memory experiments
@@ -81,3 +82,20 @@ Generic Phase 2 defaults and old schemas remain unchanged. All Phase 3 kernels
 are single-threaded; elapsed time and counted activity retain distinct scopes.
 See MEMORY_ORGANIZATION.md, CACHE_HIERARCHY.md and LOCALITY_EXPERIMENTS.md for
 accounting, setup boundaries, schema and interpretation limits.
+
+## Phase 4 multicore experiments
+
+`multicore.hpp`, `analysis/topology.cpp` and `experiments/multicore.cpp` add
+Linux affinity/sysfs/cgroup discovery, conservative thread validation, deterministic
+randomized complete blocks, descriptive statistics, scaling arithmetic and
+versioned JSON/CSV. The original delta-stepping loop is preserved; an optional
+team-size output store avoids enabling software edge counters. Dijkstra is the
+untimed oracle, and one-thread delta-stepping is the speedup baseline.
+
+Dedicated scheduling/synchronization kernels preserve useful work and validate
+checksums while comparing static/dynamic chunks, reductions, atomics and critical
+sections. Worker-local affinity RAII verifies and restores optional bindings.
+The scaling command records external OpenMP placement without claiming binding
+verification. Hardware counter worker aggregation remains unsupported. See
+[MULTICORE_ARCHITECTURE.md](MULTICORE_ARCHITECTURE.md) and
+[SCALING_EXPERIMENTS.md](SCALING_EXPERIMENTS.md) for boundaries and limitations.

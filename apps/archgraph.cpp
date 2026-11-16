@@ -1,4 +1,5 @@
 #include "archgraph/analysis.hpp"
+#include "archgraph/multicore.hpp"
 #include "archgraph/experiments.hpp"
 #include "archgraph/perf.hpp"
 #include "archgraph/benchmark.hpp"
@@ -39,6 +40,8 @@ int main(int argc, char* argv[]) {
                      "Usage: archgraph --cpu | --counter-diagnostics\n"
                      "Usage: archgraph bench <SSSP options> [--repetitions 5] [--warmups 1] [--hardware-counters]\n"
                      "Bench reports verified wall nanoseconds; optional user-thread PMU counters support Dijkstra only.\n";
+        std::cout << "Usage: archgraph scaling --input graph.txt --source 0 --threads 1,2 [--delta 16] [--repetitions 15] [--warmups 1] [--seed 1] [--affinity none|compact] [--allow-oversubscription] [--csv trials.csv]\n"
+                     "       archgraph parallel-kernels --threads 1,2 [--size 65536] [--chunks 1,64] [--workload uniform|irregular] [same trial options]\n";
         std::cout << archgraph::experiment_help();
         return 0;
     }
@@ -46,6 +49,7 @@ int main(int argc, char* argv[]) {
     try {
         if (argc >= 2) {
             const std::string_view command(argv[1]);
+            if (command == "scaling" || command == "parallel-kernels") { return archgraph::multicore::cli(argc, argv, std::cout); }
             if (command == "memory" || command == "locality" || command == "cache-study" || command == "compare-layouts") {
                 return archgraph::experiment_cli(argc,argv,std::cout);
             }

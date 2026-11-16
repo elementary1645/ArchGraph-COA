@@ -11,8 +11,10 @@
    memory accounting, deterministic spatial/temporal read kernels, metadata-sized
    working-set plans and optional L1D/LL/DTLB read counters with honest fallback.
    Local timings do not establish cache transitions or controlled speedups.
-4. **Phase 4 — future:** OpenMP scaling, thread efficiency and overhead with observed
-   team/affinity information and interference assessment.
+4. **Phase 4 — implemented:** verified same-algorithm OpenMP scaling, randomized
+   blocks, efficiency/Amdahl analysis, topology/quota reporting, equal-work scheduling
+   and synchronization kernels, optional kernel affinity, JSON/CSV and validation.
+   Shared-host SMT observations do not establish physical multicore scaling.
 5. **Phase 5 — future:** visualizations of actual CPU, memory, cache and multicore results.
 6. **Phase 6 — future:** academic report, presentation, architecture diagrams,
    reproducible demonstration and viva preparation.

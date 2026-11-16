@@ -20,6 +20,7 @@ add_library(archgraph_engine STATIC
     src/algorithms/dijkstra.cpp src/algorithms/delta_stepping.cpp
     src/instrumentation/workload.cpp src/instrumentation/resources.cpp
     src/project_info.cpp src/analysis/cpu.cpp src/benchmark/static.cpp src/profiling/perf.cpp
+    src/analysis/topology.cpp src/experiments/multicore.cpp
     src/analysis/cache.cpp src/experiments/layout.cpp src/experiments/locality.cpp
     src/experiments/commands.cpp src/experiments/cli.cpp)
 execute_process(COMMAND git rev-parse HEAD WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"

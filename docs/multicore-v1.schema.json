@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/elementary1645/ArchGraph-COA/multicore-v1.schema.json",
+  "title": "ArchGraph multicore experiment v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_version",
+    "experiment_type",
+    "status",
+    "verified",
+    "algorithm",
+    "graph_provenance",
+    "metadata",
+    "topology",
+    "runtime",
+    "affinity",
+    "baseline_definition",
+    "amdahl",
+    "counter_status",
+    "environment_limitations",
+    "trials",
+    "summaries"
+  ],
+  "properties": {
+    "schema": {
+      "const": "archgraph-multicore-experiments"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "experiment_type": {
+      "enum": [
+        "scaling",
+        "parallel-kernels"
+      ]
+    },
+    "status": {
+      "const": "completed"
+    },
+    "verified": {
+      "const": true
+    },
+    "algorithm": {
+      "type": "string"
+    },
+    "graph_provenance": {
+      "type": "object"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "topology": {
+      "type": "object"
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "affinity": {
+      "type": "object"
+    },
+    "baseline_definition": {
+      "type": "string"
+    },
+    "amdahl": {
+      "type": "object"
+    },
+    "counter_status": {
+      "enum": [
+        "not_requested",
+        "unsupported_scope"
+      ]
+    },
+    "environment_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "block",
+          "warmup",
+          "requested_threads",
+          "observed_threads",
+          "strategy",
+          "chunk",
+          "wall_ns",
+          "checksum",
+          "affinity_applied",
+          "affinity_restored"
+        ],
+        "properties": {
+          "block": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "warmup": {
+            "type": "boolean"
+          },
+          "requested_threads": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "observed_threads": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "chunk": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "wall_ns": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "checksum": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "affinity_applied": {
+            "type": "boolean"
+          },
+          "affinity_restored": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "summaries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "strategy",
+          "chunk",
+          "requested_threads",
+          "median_wall_ns",
+          "minimum_wall_ns",
+          "maximum_wall_ns",
+          "mad_wall_ns",
+          "speedup",
+          "efficiency",
+          "amdahl_speedup"
+        ],
+        "properties": {
+          "median_wall_ns": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minimum_wall_ns": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "maximum_wall_ns": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "amdahl_speedup": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "speedup": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          },
+          "efficiency": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          },
+          "mad_wall_ns": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

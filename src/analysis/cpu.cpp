@@ -1,4 +1,5 @@
 #include "archgraph/analysis.hpp"
+#include "archgraph/multicore.hpp"
 #include <omp.h>
 #include "archgraph_build.hpp"
 #include <fstream>
@@ -35,6 +36,8 @@ std::string cpu_metadata() {
         << ",\"cpu_model_source\":" << (model.empty() ? "null" : "\"/proc/cpuinfo\"")
         << ",\"logical_cpu_hint\":" << std::thread::hardware_concurrency()
         << ",\"openmp_max_threads\":" << omp_get_max_threads()
+        << ",\"topology\":" << multicore::topology_json(multicore::discover())
+        << ",\"openmp_available\":true,\"openmp_thread_limit\":" << omp_get_thread_limit()
         << ",\"openmp_spec\":" << _OPENMP
         << ",\"compiler\":" << quote(__VERSION__)
         << ",\"build_type\":" << quote(ARCHGRAPH_BUILD_TYPE)
