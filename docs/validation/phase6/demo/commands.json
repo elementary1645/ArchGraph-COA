@@ -1,0 +1,213 @@
+[
+  {
+    "argv": [
+      "/home/codespace/.python/current/bin/python3",
+      "-B",
+      "/workspaces/ArchGraph-COA/benchmarks/python/generate.py",
+      "generate",
+      "--spec",
+      "/workspaces/ArchGraph-COA/benchmarks/configs/chain-v1.json",
+      "--output",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph"
+    ]
+  },
+  {
+    "argv": [
+      "/home/codespace/.python/current/bin/python3",
+      "-B",
+      "/workspaces/ArchGraph-COA/benchmarks/python/generate.py",
+      "verify",
+      "--manifest",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/manifest.json"
+    ]
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "--cpu"
+    ],
+    "stdout": "cpu.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "--counter-diagnostics"
+    ],
+    "stdout": "diagnostic.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "sssp",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt",
+      "--source",
+      "0",
+      "--algorithm",
+      "dijkstra"
+    ],
+    "stdout": "sssp-dijkstra.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "sssp",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt",
+      "--source",
+      "0",
+      "--algorithm",
+      "delta-stepping",
+      "--delta",
+      "16",
+      "--threads",
+      "2"
+    ],
+    "stdout": "sssp-delta.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "bench",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt",
+      "--source",
+      "0",
+      "--algorithm",
+      "dijkstra",
+      "--repetitions",
+      "5",
+      "--hardware-counters"
+    ],
+    "stdout": "benchmark.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "memory",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt"
+    ],
+    "stdout": "memory.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "compare-layouts",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt",
+      "--source",
+      "0",
+      "--runs",
+      "5"
+    ],
+    "stdout": "layouts.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "locality",
+      "--pattern",
+      "sequential",
+      "--size",
+      "262144",
+      "--accesses",
+      "32768",
+      "--seed",
+      "42",
+      "--runs",
+      "5"
+    ],
+    "stdout": "locality-sequential.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "locality",
+      "--pattern",
+      "random",
+      "--size",
+      "262144",
+      "--accesses",
+      "32768",
+      "--seed",
+      "42",
+      "--runs",
+      "5"
+    ],
+    "stdout": "locality-random.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "cache-study",
+      "--sizes",
+      "4096,32768,262144",
+      "--accesses",
+      "32768",
+      "--seed",
+      "42",
+      "--runs",
+      "5"
+    ],
+    "stdout": "cache-study.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "scaling",
+      "--input",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/graph/graph.txt",
+      "--source",
+      "0",
+      "--threads",
+      "1,2",
+      "--delta",
+      "16",
+      "--repetitions",
+      "5",
+      "--warmups",
+      "1",
+      "--seed",
+      "42",
+      "--csv",
+      "/workspaces/ArchGraph-COA/docs/validation/phase6/demo/scaling.csv"
+    ],
+    "stdout": "scaling.json",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/workspaces/ArchGraph-COA/build/phase6-release/archgraph",
+      "parallel-kernels",
+      "--threads",
+      "1,2",
+      "--size",
+      "4096",
+      "--chunks",
+      "16",
+      "--workload",
+      "irregular",
+      "--repetitions",
+      "3",
+      "--warmups",
+      "1",
+      "--seed",
+      "42",
+      "--affinity",
+      "compact"
+    ],
+    "stdout": "kernels.json",
+    "stderr": ""
+  }
+]

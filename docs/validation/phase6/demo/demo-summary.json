@@ -1,0 +1,25 @@
+{
+  "sssp_outputs_equal": true,
+  "thread_list": "1,2",
+  "scaling_calls": 12,
+  "purpose": "Tiny correctness/demo capture, not controlled performance evidence",
+  "topology": {
+    "logical_processors": 2,
+    "physical_cores_in_affinity": 1,
+    "sockets_in_affinity": 1,
+    "smt_detected": true,
+    "affinity_known": true,
+    "available_cpus": [
+      0,
+      1
+    ],
+    "affinity_restricted": false,
+    "quota_status": "unlimited_visible",
+    "quota_cpus": null,
+    "safe_thread_limit": 2,
+    "limitations": [
+      "Available logical processors share physical cores (SMT); thread count is not independent core count",
+      "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+    ]
+  }
+}

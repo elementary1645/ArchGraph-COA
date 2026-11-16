@@ -125,3 +125,17 @@ GitHub Actions dashboard workflow are optional. CMake, graph algorithms, importe
 headers and existing CTests are unchanged. Demo sources reuse committed Phase 2/4
 receipts plus actual Phase 3-style CLI captures under `docs/validation/phase5/`.
 See [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md) for the complete import/trust contract.
+
+## Phase 6 academic delivery and read-only evidence analysis
+
+`docs/academic/` consolidates the implemented system without changing engine or
+dashboard algorithms. Standard-library audit/results/demo scripts verify immutable
+receipts, derive non-pooled tables and capture fresh demo outputs into new directories.
+Optional Matplotlib and python-pptx scripts export scientific figures and an editable
+notes-bearing deck. Mermaid syntax and delivery checks complement the unchanged
+CMake/CTest/pytest workflows. Requirements for authoring are separate from the core
+and UI. See [academic index](academic/README.md) and [final validation](academic/FINAL_VALIDATION.md).
+
+The import manifest remains historical; a final audit records the documented Phase 4
+team-observation extension. No new license grant, browser rendering verification,
+independent-core scaling or PMU fidelity is inferred from the academic package.

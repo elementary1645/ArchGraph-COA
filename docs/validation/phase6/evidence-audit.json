@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "receipts_checked": 13,
+  "receipts": [
+    {
+      "path": "docs/validation/phase5/receipts/memory.json",
+      "sha256": "eb6a64bd3769e778bd84c345e9271d94f78fbffcf69cc94c7d2369fb7e9cd1e2",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 0,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "sha256": "b9e80ef953f96b2bc689b51b853ff70f701e42626cb831fe2a425917ad5ba3dc",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 10,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-sequential.json",
+      "sha256": "9cd60730173616a8c0f5153db0d3e69842fcb1a6e233f65ac0959820e71e8f19",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 5,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-strided.json",
+      "sha256": "12ec928f90ff4855bd9018d6ee2fa3bfd7e7ada8ca95bfd2cc531f5c7344fbe4",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 5,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-random.json",
+      "sha256": "10c1767a6b978a43b5776728f959db624a79631b8babec17a447624621116093",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 5,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-temporal.json",
+      "sha256": "3edc320a804127121915b4ff2424ecb157c2002f0de9d18f341cf0f74fb4381a",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 5,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "sha256": "e79a05f0b289a1af7789cb070ff23a1e20088e1f70e1f18d5fcf39f2d26181ea",
+      "schema_valid": true,
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "family": "memory",
+      "trial_rows": 20,
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875"
+    },
+    {
+      "path": "docs/validation/phase4/scaling.json",
+      "sha256": "e37fae304b254393637f6db8c4f638ce563eaa17286e7ce0725296d7c20caec1",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "family": "multicore",
+      "trial_rows": 34,
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6"
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "sha256": "169e5d9aeb90dbc755fde104455474b389958a4af7a626ee91130fcab4c93105",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "family": "multicore",
+      "trial_rows": 272,
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6"
+    },
+    {
+      "path": "docs/validation/phase4/cpu.json",
+      "sha256": "28f8574cd1e9932a3195f3e4fde34cdd598ceeef52db463ceda73be4cac814d5",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "family": "cpu",
+      "trial_rows": 0,
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6"
+    },
+    {
+      "path": "docs/validation/phase2/sequential-smoke.json",
+      "sha256": "bc077af82af182d55f85b3e812ded3aef2bfcb2ceebf24814693310fd5b0b145",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "family": "benchmark",
+      "trial_rows": 10,
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8"
+    },
+    {
+      "path": "docs/validation/phase2/parallel-smoke.json",
+      "sha256": "4a382ef811b9c23bcb8e485ab600c7e85128e26797de4c020c7101f207bb6523",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "family": "benchmark",
+      "trial_rows": 10,
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8"
+    },
+    {
+      "path": "docs/validation/phase2/diagnostic.json",
+      "sha256": "4aef626e9a925c84ade20ec4509be7800c91ab5ae3ddbb5d0147fcad624da0a2",
+      "schema_valid": true,
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "family": "diagnostic",
+      "trial_rows": 0,
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8"
+    }
+  ],
+  "csv_checks": [
+    {
+      "path": "docs/validation/phase4/scaling.csv",
+      "rows": 34,
+      "equal_to_json": true
+    },
+    {
+      "path": "docs/validation/phase4/kernels.csv",
+      "rows": 272,
+      "equal_to_json": true
+    }
+  ],
+  "upstream_source": "https://github.com/elementary1645/Dynagraph-HPC",
+  "upstream_commit": "1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9",
+  "import_files": [
+    {
+      "path": "apps/archgraph.cpp",
+      "initial_import_status": "adapted",
+      "upstream_sha256": "af7287eacbe30e7387dc6a531adb157c905a8fe0ed509fb7df1ba9bf4ff15581",
+      "current_sha256": "bd89a1ead739511bb178c61435d17f41fe8436b55c34b893e49066c95fcc9554",
+      "equal_to_upstream": false,
+      "explanation": "Initial adaptation recorded by original manifest"
+    },
+    {
+      "path": "benchmarks/configs/chain-v1.json",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "2c8a3a621edd6a0fbb76683e8925413fcfb7debc790e3b956165f0b1d6b45e36",
+      "current_sha256": "2c8a3a621edd6a0fbb76683e8925413fcfb7debc790e3b956165f0b1d6b45e36",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "benchmarks/python/artifacts.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "93bcf90c31601066563afcd8a137ea216a3de045e95e542e329864196ff93512",
+      "current_sha256": "93bcf90c31601066563afcd8a137ea216a3de045e95e542e329864196ff93512",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "benchmarks/python/deterministic.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "827b24246a539e57b50356d0bce09de58d94cd1a60b6050936a6ebb1a7c0073a",
+      "current_sha256": "827b24246a539e57b50356d0bce09de58d94cd1a60b6050936a6ebb1a7c0073a",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "benchmarks/python/generate.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "de2a1b42ad7d9cbdc7d1c398b04329d85fe55fc6c6f73af4d7d123ff4f0da25e",
+      "current_sha256": "de2a1b42ad7d9cbdc7d1c398b04329d85fe55fc6c6f73af4d7d123ff4f0da25e",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "benchmarks/python/workloads.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "6ad19119574f81e4c852ba2fe2a736805a3a107fd2bb398533523758de00773d",
+      "current_sha256": "6ad19119574f81e4c852ba2fe2a736805a3a107fd2bb398533523758de00773d",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/algorithms/delta_stepping.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "abeca630af480d465a6e862d3f992c99945af55f3bdf65a8eaaaf1ff061e5797",
+      "current_sha256": "040e82f6685fc1928bb483c1ac28f0a971d582d4ce1cfbc664a61681fe6d4d96",
+      "equal_to_upstream": false,
+      "explanation": "Phase 4 optional observed-team output; algorithm loop preserved"
+    },
+    {
+      "path": "include/dynagraph/algorithms/sssp.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "b3afde2df8dd6b0836122c31e085cb6598cddd39dfe5db1af2978ea2bcfdf9fc",
+      "current_sha256": "b3afde2df8dd6b0836122c31e085cb6598cddd39dfe5db1af2978ea2bcfdf9fc",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/graph/csr_graph.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "79a46cd73e42c1c50b5e8035dfc8aec85f34dff2845b7fb756c8146288810ca2",
+      "current_sha256": "79a46cd73e42c1c50b5e8035dfc8aec85f34dff2845b7fb756c8146288810ca2",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/graph/edge_list_io.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "074df58be0fda922f600e34b4cd0bd1b77e932c8504c78ffc2e97b78121402e7",
+      "current_sha256": "074df58be0fda922f600e34b4cd0bd1b77e932c8504c78ffc2e97b78121402e7",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/instrumentation/resources.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "1a7561efcbcc1f6e88ff313441e97b05f5818b4196ea831f729f10d3aec8f53f",
+      "current_sha256": "1a7561efcbcc1f6e88ff313441e97b05f5818b4196ea831f729f10d3aec8f53f",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/instrumentation/workload.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "d9b35dfbce306e05e16186bd91fae426d544714afa830dbaaa91fd5d36bd0573",
+      "current_sha256": "d9b35dfbce306e05e16186bd91fae426d544714afa830dbaaa91fd5d36bd0573",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "include/dynagraph/project_info.hpp",
+      "initial_import_status": "adapted",
+      "upstream_sha256": "3e553dc3e4472443586fa5db031174490e2388a3c41147519fa862732f09121a",
+      "current_sha256": "94b5f971381074315e8dafcc7b12106e436418e18ca4d2648f56e33ee2d8900d",
+      "equal_to_upstream": false,
+      "explanation": "Initial adaptation recorded by original manifest"
+    },
+    {
+      "path": "src/algorithms/delta_stepping.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "42654c79a86417fb3f64bd67643b879865b10f81de30a9886c7d04357e551b8b",
+      "current_sha256": "23d538735fefcf7a8fd6dd1067b7905819e0f9ccf6f0d3face2715e89ccfa528",
+      "equal_to_upstream": false,
+      "explanation": "Phase 4 optional observed-team output; algorithm loop preserved"
+    },
+    {
+      "path": "src/algorithms/dijkstra.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "0d0a21953a33496fa2a9a4cc418662c0b218ebe56a5db44ae8b7c375bb15032d",
+      "current_sha256": "0d0a21953a33496fa2a9a4cc418662c0b218ebe56a5db44ae8b7c375bb15032d",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/graph/csr_graph.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "43dbb0f61d873629ff7a9dd31468f87ddf71cee5bcb0c1b0fcaa08e041b5630c",
+      "current_sha256": "43dbb0f61d873629ff7a9dd31468f87ddf71cee5bcb0c1b0fcaa08e041b5630c",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/graph/edge_list_io.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "d257672c1542e1370c8e2917c8163c213eeeb626db49fb9bcabc13658174e12a",
+      "current_sha256": "d257672c1542e1370c8e2917c8163c213eeeb626db49fb9bcabc13658174e12a",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/graph/validation.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "cf6571d9b2b219e1998c9a075e29f627a4a3474facd003c35b3c06da81b4e05d",
+      "current_sha256": "cf6571d9b2b219e1998c9a075e29f627a4a3474facd003c35b3c06da81b4e05d",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/instrumentation/resources.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "3f8361c10771ee37a7a2bd600022866cebf86e2ca45b6f3e90cd9037e869b4d9",
+      "current_sha256": "3f8361c10771ee37a7a2bd600022866cebf86e2ca45b6f3e90cd9037e869b4d9",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/instrumentation/workload.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "77ac0daf2a947599217be6cb4046fb19991bd667f07baa58c423be1f731a4c7b",
+      "current_sha256": "77ac0daf2a947599217be6cb4046fb19991bd667f07baa58c423be1f731a4c7b",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "src/project_info.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "52fe7d973fc34010f9eb52411c568017e220ee7ae6298ba8429ec003760af04b",
+      "current_sha256": "52fe7d973fc34010f9eb52411c568017e220ee7ae6298ba8429ec003760af04b",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/sssp_test_support.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "4f47eb8685b94444bd31f08c955de86085b90a7fa604bba98d7891ea807e7061",
+      "current_sha256": "4f47eb8685b94444bd31f08c955de86085b90a7fa604bba98d7891ea807e7061",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_cli_sssp.cmake",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "50b9d7d844e26fb1adfe892958eee223495e63e2b08c9dc53127563a4dc2a5eb",
+      "current_sha256": "50b9d7d844e26fb1adfe892958eee223495e63e2b08c9dc53127563a4dc2a5eb",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_csr_graph.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "26438c7e3134f716a5ec3921c6f973e93b47344f6d782095c9a7bb778f5071aa",
+      "current_sha256": "26438c7e3134f716a5ec3921c6f973e93b47344f6d782095c9a7bb778f5071aa",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_delta_stepping.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "b0329692da3cfd17fadaf4ade99d2889b4ffbb36556117de091eba898b7409f2",
+      "current_sha256": "b0329692da3cfd17fadaf4ade99d2889b4ffbb36556117de091eba898b7409f2",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_dijkstra.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "52449d7f67253bf0d84dbe8150de4fe88a12f1954ab4ef3a62bef0ccb49ebdb3",
+      "current_sha256": "52449d7f67253bf0d84dbe8150de4fe88a12f1954ab4ef3a62bef0ccb49ebdb3",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_edge_list_io.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "3fd42635bc6b6820934a1b094cd421c840162081039a166b3402d87f8fc60a36",
+      "current_sha256": "3fd42635bc6b6820934a1b094cd421c840162081039a166b3402d87f8fc60a36",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_openmp.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "e4515a614f802dd017ae7d9bf09027e883fca8ee69c6383d14f3c88ad775b0d0",
+      "current_sha256": "e4515a614f802dd017ae7d9bf09027e883fca8ee69c6383d14f3c88ad775b0d0",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_project_info.cpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "49e303f75beb50441913546eff6bb1ad34f59a1fbd4ffad730c71362082445d9",
+      "current_sha256": "49e303f75beb50441913546eff6bb1ad34f59a1fbd4ffad730c71362082445d9",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_support.hpp",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "27c93a8312148aadbe595bf8b18ee73d6d8ab3f1595a81d7702974e7247ca849",
+      "current_sha256": "27c93a8312148aadbe595bf8b18ee73d6d8ab3f1595a81d7702974e7247ca849",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_workload_loader.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "cf83b6a3dc4f74f631b2fc3f74d28e91e0ab50dd81b8a787afad60be3d72d582",
+      "current_sha256": "cf83b6a3dc4f74f631b2fc3f74d28e91e0ab50dd81b8a787afad60be3d72d582",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    },
+    {
+      "path": "tests/test_workloads.py",
+      "initial_import_status": "unchanged",
+      "upstream_sha256": "73d0eed837b02c32a2b0ca13c4fa866fca1eaf612c0b27fda0f2791e8cb7ab8b",
+      "current_sha256": "73d0eed837b02c32a2b0ca13c4fa866fca1eaf612c0b27fda0f2791e8cb7ab8b",
+      "equal_to_upstream": true,
+      "explanation": "Unchanged imported bytes"
+    }
+  ],
+  "licensing": "No upstream license grant recorded; redistribution clearance unresolved",
+  "scope": "Byte integrity, supported schemas and recorded provenance; not authentication of hardware or a license grant"
+}

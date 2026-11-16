@@ -1,0 +1,3 @@
+# Optional artifact authoring only; not required by CMake or the dashboard.
+python-pptx>=1.0.2,<2
+matplotlib>=3.10,<4

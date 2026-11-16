@@ -57,3 +57,19 @@ Combined system/concurrency/failure tests depend on excluded adaptive/incrementa
 engines and were not imported or reported as passing. The standalone core tests
 remain intact. All retained production translation units link in the standalone
 build, proving there is no unresolved dependency on excluded engines.
+
+## Subsequent-phase audit (Phase 6)
+
+The inventory and `status` fields above describe the original Phase 1 import, not
+a promise that every destination remains byte-identical forever. Phase 4 added an
+optional observed-team output to `include/dynagraph/algorithms/delta_stepping.hpp`
+and `src/algorithms/delta_stepping.cpp`, preserving the algorithm loops and existing
+source aggregate meanings. Original upstream hashes are retained unmodified.
+Current destination hashes and the two documented changes are recorded in
+[the final evidence audit](validation/phase6/evidence-audit.json).
+
+The dependency statement above concerns the initial core import. Later dashboard
+and academic authoring tools have separate optional requirement files and do not
+change the core's build requirements. No upstream license grant has been recorded
+by this delivery. See [final licensing status](academic/LICENSING.md) before making
+redistribution or unrestricted open-source claims.

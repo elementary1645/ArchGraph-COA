@@ -1,0 +1,2 @@
+GET /_stcore/health: HTTP 200; 2 bytes; ok
+GET /: HTTP 200; 7863 bytes; Streamlit HTML shell
