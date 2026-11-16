@@ -1,0 +1,51 @@
+[  2%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/multicore.cpp.o
+[  4%] Linking CXX static library libarchgraph_engine.a
+[ 37%] Built target archgraph_engine
+[ 39%] Linking CXX executable test_project_info
+[ 41%] Linking CXX executable archgraph
+[ 43%] Built target test_project_info
+[ 45%] Linking CXX executable test_openmp
+[ 47%] Built target test_openmp
+[ 50%] Linking CXX executable test_csr_graph
+[ 52%] Built target archgraph
+[ 54%] Linking CXX executable test_edge_list_io
+[ 56%] Built target test_csr_graph
+[ 58%] Linking CXX executable test_dijkstra
+[ 60%] Built target test_edge_list_io
+[ 62%] Linking CXX executable test_delta_stepping
+[ 64%] Built target test_dijkstra
+[ 66%] Linking CXX executable test_perf
+[ 68%] Built target test_delta_stepping
+[ 70%] Linking CXX executable test_perf_hardware
+[ 72%] Built target test_perf
+[ 75%] Linking CXX executable test_layout
+[ 77%] Built target test_layout
+[ 79%] Built target test_perf_hardware
+[ 81%] Linking CXX executable test_locality
+[ 83%] Linking CXX executable test_cache
+[ 85%] Built target test_locality
+[ 87%] Linking CXX executable test_memory_perf
+[ 89%] Built target test_cache
+[ 91%] Linking CXX executable test_memory_hardware
+[ 93%] Built target test_memory_perf
+[ 95%] Linking CXX executable test_multicore
+[ 97%] Built target test_memory_hardware
+[100%] Built target test_multicore
+[ 37%] Built target archgraph_engine
+[ 41%] Built target test_project_info
+[ 45%] Built target archgraph
+[ 50%] Built target test_openmp
+[ 54%] Built target test_csr_graph
+[ 58%] Built target test_edge_list_io
+[ 62%] Built target test_dijkstra
+[ 66%] Built target test_delta_stepping
+[ 70%] Built target test_perf
+[ 75%] Built target test_perf_hardware
+[ 79%] Built target test_layout
+[ 83%] Built target test_locality
+[ 87%] Built target test_cache
+[ 91%] Built target test_memory_perf
+[ 93%] Building CXX object tests/CMakeFiles/test_multicore.dir/test_multicore.cpp.o
+[ 97%] Built target test_memory_hardware
+[100%] Linking CXX executable test_multicore
+[100%] Built target test_multicore

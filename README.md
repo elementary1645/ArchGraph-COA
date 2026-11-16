@@ -125,3 +125,23 @@ tests/                        native, CLI and Python tests
 docs/                         architecture, provenance, roadmap and validation
 docs/validation/              local build/test receipts
 ```
+
+## Phase 4: multicore and thread scaling
+
+Verified delta-stepping scaling uses a one-thread delta-stepping baseline,
+seeded randomized blocks, recorded warmups and individual trials, median/range/MAD,
+observed teams, CPU affinity/quota topology and honest OpenMP PMU limitations.
+Dedicated equal-work kernels compare static/dynamic chunks and reduction,
+atomic and critical synchronization with optional verified worker affinity.
+
+```sh
+build/phase4-release/archgraph --cpu
+build/phase4-release/archgraph scaling --input data/phase3-grid/graph.txt --source 0 --threads 1,2 --repetitions 15 --seed 42 --csv /tmp/scaling.csv
+build/phase4-release/archgraph parallel-kernels --threads 1,2 --chunks 1,64 --workload irregular --affinity compact --repetitions 15
+```
+
+Check topology first and use only supported thread counts. The current validation
+host exposes two SMT contexts on one physical core, so it cannot demonstrate
+scaling across independent physical cores. See [live demo and result contract](docs/SCALING_EXPERIMENTS.md),
+[multicore architecture](docs/MULTICORE_ARCHITECTURE.md),
+[Amdahl assumptions](docs/AMDAHLS_LAW.md) and [validation](docs/PHASE4_VALIDATION.md).

@@ -35,11 +35,11 @@ template <bool Instrumented>
 class Query {
 public:
     Query(const CSRGraph& graph, VertexId source, Distance delta, int requested,
-          DeltaSteppingMetrics* metrics, WorkloadObservations* observations, int original_request)
+          DeltaSteppingMetrics* metrics, WorkloadObservations* observations, int original_request, int* observed)
         : graph_(graph), delta_(delta), cap_((graph.vertex_count() - 1) * CSRGraph::max_edge_weight),
           labels_(std::make_unique<std::atomic<Distance>[]>(static_cast<std::size_t>(graph.vertex_count()))),
           threads_(static_cast<std::size_t>(requested)),
-          in_set_(static_cast<std::size_t>(graph.vertex_count()), 0), metrics_(metrics), observations_(observations) {
+          in_set_(static_cast<std::size_t>(graph.vertex_count()), 0), metrics_(metrics), observations_(observations), observed_(observed) {
         if (observations_) { observations_->prepare(original_request, requested); }
         for (std::size_t v = 0; v < graph.vertex_count(); ++v) {
             labels_[v].store(unreachable_distance, std::memory_order_relaxed);
@@ -114,6 +114,7 @@ public:
                 metrics_->counters_saturated |= state.saturated;
             }
         }
+        if (observed_) { *observed_ = actual_threads_; }
         return result;
     }
 
@@ -240,6 +241,7 @@ private:
     std::vector<Work> work_;
     DeltaSteppingMetrics* metrics_;
     WorkloadObservations* observations_;
+    int* observed_;
     std::exception_ptr error_;
     Distance bucket_ = 0;
     int actual_threads_ = 0;
@@ -262,8 +264,8 @@ SSSPResult delta_stepping(const CSRGraph& graph, VertexId source,
     }
     if (metrics != nullptr) {
         *metrics = {};
-        return Query<true>(graph, source, options.delta, requested, metrics, options.workload_observations, options.thread_count).execute(source, requested);
+        return Query<true>(graph, source, options.delta, requested, metrics, options.workload_observations, options.thread_count, options.observed_thread_count).execute(source, requested);
     }
-    return Query<false>(graph, source, options.delta, requested, nullptr, options.workload_observations, options.thread_count).execute(source, requested);
+    return Query<false>(graph, source, options.delta, requested, nullptr, options.workload_observations, options.thread_count, options.observed_thread_count).execute(source, requested);
 }
 } // namespace dynagraph

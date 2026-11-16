@@ -1,0 +1,100 @@
+{
+  "graph_sha256": "7723913cc25a6507797ce31dc6d23290fda057f649dc4d3270e24d7a26523215",
+  "spec": {
+    "schema_version": 1,
+    "workload_id": "phase3-grid-demo",
+    "split": "development",
+    "seeds": {
+      "graph": "1",
+      "weight": "2",
+      "source": "3",
+      "trace": "4"
+    },
+    "graph": {
+      "family": "grid",
+      "rows": 128,
+      "columns": 128,
+      "bidirectional": true
+    },
+    "weights": {
+      "kind": "positive_uniform",
+      "min": 16,
+      "max": 32
+    },
+    "source": {
+      "kind": "explicit",
+      "vertex": 0
+    },
+    "trace": {
+      "count": 12,
+      "schedule": [
+        "strict",
+        "repeat",
+        "equal"
+      ],
+      "max_decrement": 2
+    }
+  },
+  "manifest": {
+    "artifacts": {
+      "graph": {
+        "path": "graph.txt",
+        "sha256": "7723913cc25a6507797ce31dc6d23290fda057f649dc4d3270e24d7a26523215"
+      },
+      "trace": {
+        "path": "trace.txt",
+        "sha256": "95bbf5ee7207e8fcdac3d2540ac5a7379f7048ddf00f82a6e078e1fafc8ea945"
+      }
+    },
+    "configuration": {
+      "graph": {
+        "bidirectional": true,
+        "columns": 128,
+        "family": "grid",
+        "rows": 128
+      },
+      "schema_version": 1,
+      "seeds": {
+        "graph": "1",
+        "source": "3",
+        "trace": "4",
+        "weight": "2"
+      },
+      "source": {
+        "kind": "explicit",
+        "vertex": 0
+      },
+      "split": "development",
+      "trace": {
+        "count": 12,
+        "max_decrement": 2,
+        "schedule": [
+          "strict",
+          "repeat",
+          "equal"
+        ]
+      },
+      "weights": {
+        "kind": "positive_uniform",
+        "max": 32,
+        "min": 16
+      },
+      "workload_id": "phase3-grid-demo"
+    },
+    "counts": {
+      "edges": 65024,
+      "updates": 12,
+      "vertices": 16384
+    },
+    "final_graph_sha256": "d0d13c91735c3fc57918524f3cdbb7a7bdc22cbc956c3d2265283ee734d04f6e",
+    "generator_versions": {
+      "graph": "dynagraph-graph-v1",
+      "prng": "splitmix64-v1",
+      "trace": "dynagraph-trace-v1"
+    },
+    "schema_version": 1,
+    "source": 0,
+    "split": "development",
+    "workload_id": "phase3-grid-demo"
+  }
+}

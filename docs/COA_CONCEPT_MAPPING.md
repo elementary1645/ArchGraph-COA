@@ -5,7 +5,7 @@
 | Instruction execution | Sequential Dijkstra can collect real cycles/instructions and IPC/CPI when permitted; software work counts remain separate | Cross-platform PMU fidelity and controlled architectural comparisons |
 | Cache hierarchy | Discovered level/line/sharing metadata sizes bounded studies; optional generic and L1D/LL read pairs retain availability status | Validated PMU fidelity and evidence-supported capacity/latency attribution |
 | Memory organization | CSR/adjacency accounting and equal-edge traversal; indexed spatial and temporal kernels record reads/checksums/footprints | Peak bandwidth, NUMA placement and controlled physical-memory attribution |
-| Multicore processing | OpenMP teams, barriers and atomic relaxation implement parallel SSSP; correctness is checked against Dijkstra | Controlled scaling, efficiency and synchronization costs |
+| Multicore processing | OpenMP teams, barriers and atomic relaxation implement parallel SSSP; correctness is checked against Dijkstra | Exclusive-core isolation and validated worker PMU totals |
 | Performance analysis | Repeated monotonic wall timing, deterministic input hashes and CPU/build metadata | Validated worker aggregation and statistically qualified conclusions |
 
 Wall time includes OS scheduling and runtime overhead. Algorithm work counts are
@@ -29,3 +29,12 @@ cache-level transitions from timing. The separate DTLB pair concerns address
 translation. Memory reports distinguish logical bytes, capacity/control estimates,
 unknown allocator overhead and coarse whole-process RSS. Both graph layouts reject
 duplicate directed edges and produce the same verified shortest paths.
+
+Phase 4 maps SISD to the sequential oracle and MIMD to independent OpenMP workers.
+Physical cores, SMT contexts and software threads are reported separately where
+observable. Seeded blocks demonstrate thread scheduling and granularity; equal-work
+reduction, atomic and critical kernels expose synchronization costs. Optional
+worker affinity uses sparse allowed CPU IDs and restores original masks. Median
+same-algorithm speedup and efficiency accompany explicitly assumed Amdahl curves.
+The validation machine has one visible physical core with two SMT contexts, so
+these results demonstrate methodology and overhead, not independent-core scaling.

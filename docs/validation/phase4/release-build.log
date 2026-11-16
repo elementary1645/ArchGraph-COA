@@ -1,0 +1,64 @@
+[  2%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/csr_graph.cpp.o
+[  4%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/edge_list_io.cpp.o
+[  6%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/dijkstra.cpp.o
+[  8%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/delta_stepping.cpp.o
+[ 10%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/workload.cpp.o
+[ 12%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/resources.cpp.o
+[ 14%] Building CXX object CMakeFiles/archgraph_engine.dir/src/project_info.cpp.o
+[ 16%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/cpu.cpp.o
+[ 18%] Building CXX object CMakeFiles/archgraph_engine.dir/src/benchmark/static.cpp.o
+[ 20%] Building CXX object CMakeFiles/archgraph_engine.dir/src/profiling/perf.cpp.o
+[ 22%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/topology.cpp.o
+[ 25%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/multicore.cpp.o
+[ 27%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/cache.cpp.o
+[ 29%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/layout.cpp.o
+[ 31%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/locality.cpp.o
+[ 33%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/commands.cpp.o
+[ 35%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/cli.cpp.o
+[ 37%] Linking CXX static library libarchgraph_engine.a
+[ 37%] Built target archgraph_engine
+[ 39%] Building CXX object tests/CMakeFiles/test_project_info.dir/test_project_info.cpp.o
+[ 41%] Building CXX object CMakeFiles/archgraph.dir/apps/archgraph.cpp.o
+[ 43%] Linking CXX executable test_project_info
+[ 43%] Built target test_project_info
+[ 45%] Building CXX object tests/CMakeFiles/test_openmp.dir/test_openmp.cpp.o
+[ 47%] Linking CXX executable test_openmp
+[ 50%] Linking CXX executable archgraph
+[ 50%] Built target test_openmp
+[ 52%] Building CXX object tests/CMakeFiles/test_csr_graph.dir/test_csr_graph.cpp.o
+[ 52%] Built target archgraph
+[ 54%] Building CXX object tests/CMakeFiles/test_edge_list_io.dir/test_edge_list_io.cpp.o
+[ 56%] Linking CXX executable test_edge_list_io
+[ 56%] Built target test_edge_list_io
+[ 58%] Building CXX object tests/CMakeFiles/test_dijkstra.dir/test_dijkstra.cpp.o
+[ 60%] Linking CXX executable test_csr_graph
+[ 60%] Built target test_csr_graph
+[ 62%] Building CXX object tests/CMakeFiles/test_delta_stepping.dir/test_delta_stepping.cpp.o
+[ 64%] Linking CXX executable test_dijkstra
+[ 64%] Built target test_dijkstra
+[ 66%] Building CXX object tests/CMakeFiles/test_perf.dir/test_perf.cpp.o
+[ 68%] Linking CXX executable test_perf
+[ 68%] Built target test_perf
+[ 70%] Building CXX object tests/CMakeFiles/test_perf_hardware.dir/test_perf_hardware.cpp.o
+[ 72%] Linking CXX executable test_delta_stepping
+[ 72%] Built target test_delta_stepping
+[ 75%] Building CXX object tests/CMakeFiles/test_layout.dir/test_layout.cpp.o
+[ 77%] Linking CXX executable test_perf_hardware
+[ 77%] Built target test_perf_hardware
+[ 79%] Building CXX object tests/CMakeFiles/test_locality.dir/test_locality.cpp.o
+[ 81%] Linking CXX executable test_layout
+[ 81%] Built target test_layout
+[ 83%] Linking CXX executable test_locality
+[ 85%] Building CXX object tests/CMakeFiles/test_cache.dir/test_cache.cpp.o
+[ 85%] Built target test_locality
+[ 87%] Building CXX object tests/CMakeFiles/test_memory_perf.dir/test_memory_perf.cpp.o
+[ 89%] Linking CXX executable test_memory_perf
+[ 89%] Built target test_memory_perf
+[ 91%] Building CXX object tests/CMakeFiles/test_memory_hardware.dir/test_memory_hardware.cpp.o
+[ 93%] Linking CXX executable test_cache
+[ 93%] Built target test_cache
+[ 95%] Building CXX object tests/CMakeFiles/test_multicore.dir/test_multicore.cpp.o
+[ 97%] Linking CXX executable test_memory_hardware
+[ 97%] Built target test_memory_hardware
+[100%] Linking CXX executable test_multicore
+[100%] Built target test_multicore
