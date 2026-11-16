@@ -1,0 +1,32 @@
+[  4%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/csr_graph.cpp.o
+[  8%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/edge_list_io.cpp.o
+[ 12%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/dijkstra.cpp.o
+[ 16%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/delta_stepping.cpp.o
+[ 20%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/workload.cpp.o
+[ 25%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/resources.cpp.o
+[ 29%] Building CXX object CMakeFiles/archgraph_engine.dir/src/project_info.cpp.o
+[ 33%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/cpu.cpp.o
+[ 37%] Building CXX object CMakeFiles/archgraph_engine.dir/src/benchmark/static.cpp.o
+[ 41%] Linking CXX static library libarchgraph_engine.a
+[ 41%] Built target archgraph_engine
+[ 45%] Building CXX object tests/CMakeFiles/test_project_info.dir/test_project_info.cpp.o
+[ 50%] Building CXX object CMakeFiles/archgraph.dir/apps/archgraph.cpp.o
+[ 54%] Linking CXX executable test_project_info
+[ 54%] Built target test_project_info
+[ 58%] Building CXX object tests/CMakeFiles/test_openmp.dir/test_openmp.cpp.o
+[ 62%] Linking CXX executable archgraph
+[ 66%] Linking CXX executable test_openmp
+[ 66%] Built target archgraph
+[ 66%] Built target test_openmp
+[ 70%] Building CXX object tests/CMakeFiles/test_csr_graph.dir/test_csr_graph.cpp.o
+[ 75%] Building CXX object tests/CMakeFiles/test_edge_list_io.dir/test_edge_list_io.cpp.o
+[ 79%] Linking CXX executable test_edge_list_io
+[ 79%] Built target test_edge_list_io
+[ 83%] Building CXX object tests/CMakeFiles/test_dijkstra.dir/test_dijkstra.cpp.o
+[ 87%] Linking CXX executable test_csr_graph
+[ 87%] Built target test_csr_graph
+[ 91%] Building CXX object tests/CMakeFiles/test_delta_stepping.dir/test_delta_stepping.cpp.o
+[ 95%] Linking CXX executable test_dijkstra
+[ 95%] Built target test_dijkstra
+[100%] Linking CXX executable test_delta_stepping
+[100%] Built target test_delta_stepping

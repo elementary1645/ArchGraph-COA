@@ -1,0 +1,216 @@
+{
+  "source": "https://github.com/elementary1645/Dynagraph-HPC",
+  "commit": "1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9",
+  "files": [
+    {
+      "upstream_path": "apps/dynagraph_cli.cpp",
+      "destination_path": "apps/archgraph.cpp",
+      "upstream_sha256": "af7287eacbe30e7387dc6a531adb157c905a8fe0ed509fb7df1ba9bf4ff15581",
+      "status": "adapted"
+    },
+    {
+      "upstream_path": "benchmarks/configs/chain-v1.json",
+      "destination_path": "benchmarks/configs/chain-v1.json",
+      "upstream_sha256": "2c8a3a621edd6a0fbb76683e8925413fcfb7debc790e3b956165f0b1d6b45e36",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "benchmarks/python/artifacts.py",
+      "destination_path": "benchmarks/python/artifacts.py",
+      "upstream_sha256": "93bcf90c31601066563afcd8a137ea216a3de045e95e542e329864196ff93512",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "benchmarks/python/deterministic.py",
+      "destination_path": "benchmarks/python/deterministic.py",
+      "upstream_sha256": "827b24246a539e57b50356d0bce09de58d94cd1a60b6050936a6ebb1a7c0073a",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "benchmarks/python/generate.py",
+      "destination_path": "benchmarks/python/generate.py",
+      "upstream_sha256": "de2a1b42ad7d9cbdc7d1c398b04329d85fe55fc6c6f73af4d7d123ff4f0da25e",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "benchmarks/python/workloads.py",
+      "destination_path": "benchmarks/python/workloads.py",
+      "upstream_sha256": "6ad19119574f81e4c852ba2fe2a736805a3a107fd2bb398533523758de00773d",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/algorithms/delta_stepping.hpp",
+      "destination_path": "include/dynagraph/algorithms/delta_stepping.hpp",
+      "upstream_sha256": "abeca630af480d465a6e862d3f992c99945af55f3bdf65a8eaaaf1ff061e5797",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/algorithms/sssp.hpp",
+      "destination_path": "include/dynagraph/algorithms/sssp.hpp",
+      "upstream_sha256": "b3afde2df8dd6b0836122c31e085cb6598cddd39dfe5db1af2978ea2bcfdf9fc",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/graph/csr_graph.hpp",
+      "destination_path": "include/dynagraph/graph/csr_graph.hpp",
+      "upstream_sha256": "79a46cd73e42c1c50b5e8035dfc8aec85f34dff2845b7fb756c8146288810ca2",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/graph/edge_list_io.hpp",
+      "destination_path": "include/dynagraph/graph/edge_list_io.hpp",
+      "upstream_sha256": "074df58be0fda922f600e34b4cd0bd1b77e932c8504c78ffc2e97b78121402e7",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/instrumentation/resources.hpp",
+      "destination_path": "include/dynagraph/instrumentation/resources.hpp",
+      "upstream_sha256": "1a7561efcbcc1f6e88ff313441e97b05f5818b4196ea831f729f10d3aec8f53f",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/instrumentation/workload.hpp",
+      "destination_path": "include/dynagraph/instrumentation/workload.hpp",
+      "upstream_sha256": "d9b35dfbce306e05e16186bd91fae426d544714afa830dbaaa91fd5d36bd0573",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "include/dynagraph/project_info.hpp",
+      "destination_path": "include/dynagraph/project_info.hpp",
+      "upstream_sha256": "3e553dc3e4472443586fa5db031174490e2388a3c41147519fa862732f09121a",
+      "status": "adapted"
+    },
+    {
+      "upstream_path": "src/algorithms/delta_stepping.cpp",
+      "destination_path": "src/algorithms/delta_stepping.cpp",
+      "upstream_sha256": "42654c79a86417fb3f64bd67643b879865b10f81de30a9886c7d04357e551b8b",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/algorithms/dijkstra.cpp",
+      "destination_path": "src/algorithms/dijkstra.cpp",
+      "upstream_sha256": "0d0a21953a33496fa2a9a4cc418662c0b218ebe56a5db44ae8b7c375bb15032d",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/graph/csr_graph.cpp",
+      "destination_path": "src/graph/csr_graph.cpp",
+      "upstream_sha256": "43dbb0f61d873629ff7a9dd31468f87ddf71cee5bcb0c1b0fcaa08e041b5630c",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/graph/edge_list_io.cpp",
+      "destination_path": "src/graph/edge_list_io.cpp",
+      "upstream_sha256": "d257672c1542e1370c8e2917c8163c213eeeb626db49fb9bcabc13658174e12a",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/graph/validation.hpp",
+      "destination_path": "src/graph/validation.hpp",
+      "upstream_sha256": "cf6571d9b2b219e1998c9a075e29f627a4a3474facd003c35b3c06da81b4e05d",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/instrumentation/resources.cpp",
+      "destination_path": "src/instrumentation/resources.cpp",
+      "upstream_sha256": "3f8361c10771ee37a7a2bd600022866cebf86e2ca45b6f3e90cd9037e869b4d9",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/instrumentation/workload.cpp",
+      "destination_path": "src/instrumentation/workload.cpp",
+      "upstream_sha256": "77ac0daf2a947599217be6cb4046fb19991bd667f07baa58c423be1f731a4c7b",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "src/project_info.cpp",
+      "destination_path": "src/project_info.cpp",
+      "upstream_sha256": "52fe7d973fc34010f9eb52411c568017e220ee7ae6298ba8429ec003760af04b",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/sssp_test_support.hpp",
+      "destination_path": "tests/sssp_test_support.hpp",
+      "upstream_sha256": "4f47eb8685b94444bd31f08c955de86085b90a7fa604bba98d7891ea807e7061",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_cli_sssp.cmake",
+      "destination_path": "tests/test_cli_sssp.cmake",
+      "upstream_sha256": "50b9d7d844e26fb1adfe892958eee223495e63e2b08c9dc53127563a4dc2a5eb",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_csr_graph.cpp",
+      "destination_path": "tests/test_csr_graph.cpp",
+      "upstream_sha256": "26438c7e3134f716a5ec3921c6f973e93b47344f6d782095c9a7bb778f5071aa",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_delta_stepping.cpp",
+      "destination_path": "tests/test_delta_stepping.cpp",
+      "upstream_sha256": "b0329692da3cfd17fadaf4ade99d2889b4ffbb36556117de091eba898b7409f2",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_dijkstra.cpp",
+      "destination_path": "tests/test_dijkstra.cpp",
+      "upstream_sha256": "52449d7f67253bf0d84dbe8150de4fe88a12f1954ab4ef3a62bef0ccb49ebdb3",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_edge_list_io.cpp",
+      "destination_path": "tests/test_edge_list_io.cpp",
+      "upstream_sha256": "3fd42635bc6b6820934a1b094cd421c840162081039a166b3402d87f8fc60a36",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_openmp.cpp",
+      "destination_path": "tests/test_openmp.cpp",
+      "upstream_sha256": "e4515a614f802dd017ae7d9bf09027e883fca8ee69c6383d14f3c88ad775b0d0",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_project_info.cpp",
+      "destination_path": "tests/test_project_info.cpp",
+      "upstream_sha256": "49e303f75beb50441913546eff6bb1ad34f59a1fbd4ffad730c71362082445d9",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_support.hpp",
+      "destination_path": "tests/test_support.hpp",
+      "upstream_sha256": "27c93a8312148aadbe595bf8b18ee73d6d8ab3f1595a81d7702974e7247ca849",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_workload_loader.py",
+      "destination_path": "tests/test_workload_loader.py",
+      "upstream_sha256": "cf83b6a3dc4f74f631b2fc3f74d28e91e0ab50dd81b8a787afad60be3d72d582",
+      "status": "unchanged"
+    },
+    {
+      "upstream_path": "tests/test_workloads.py",
+      "destination_path": "tests/test_workloads.py",
+      "upstream_sha256": "73d0eed837b02c32a2b0ca13c4fa866fca1eaf612c0b27fda0f2791e8cb7ab8b",
+      "status": "unchanged"
+    }
+  ],
+  "referenced_adaptations": [
+    {
+      "upstream_path": "CMakeLists.txt",
+      "upstream_sha256": "1a9e9192058149a66418f0435b9b47b49dd4037a64bb226d9680868a6a0d80ae"
+    },
+    {
+      "upstream_path": "tests/CMakeLists.txt",
+      "upstream_sha256": "6774a7bb1ea20bb72c0ce24a123cb29db592942ec28e0369737c6ebaa89354fb"
+    },
+    {
+      "upstream_path": ".github/workflows/ci.yml",
+      "upstream_sha256": "526bfaa0608ba153b529c4cc3b8de0e3b8b3aa5beac36db8deed72ec3a3d50ac"
+    },
+    {
+      "upstream_path": "src/benchmark/timing.cpp",
+      "upstream_sha256": "d748d3793bfd22183739002f6e6dd291fc10e3b847deef4bc10777d220d33e5a"
+    }
+  ]
+}
