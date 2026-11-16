@@ -1,5 +1,6 @@
 #include "archgraph/analysis.hpp"
 #include <omp.h>
+#include "archgraph_build.hpp"
 #include <fstream>
 #include <sstream>
 #include <thread>
@@ -37,6 +38,9 @@ std::string cpu_metadata() {
         << ",\"openmp_spec\":" << _OPENMP
         << ",\"compiler\":" << quote(__VERSION__)
         << ",\"build_type\":" << quote(ARCHGRAPH_BUILD_TYPE)
+        << ",\"build_revision\":" << quote(build::revision)
+        << ",\"build_dirty\":" << quote(build::dirty)
+        << ",\"compiler_flags\":" << quote(build::flags)
         << ",\"clock\":\"std::chrono::steady_clock\",\"hardware_counters_available\":null}";
     return out.str();
 }

@@ -2,8 +2,11 @@
 
 1. **Phase 1 — implemented:** standalone imported CSR/SSSP engine, deterministic
    generation, baseline correctness, CPU/build metadata and verified wall timing.
-2. **Phase 2 — future:** availability-aware hardware counters for cycles,
-   instructions and IPC, with permission failures reported explicitly.
+2. **Phase 2 — implemented:** Linux calling-thread user-space counters for sequential
+   Dijkstra (cycles, instructions, generic cache and branch events), valid derived
+   ratios, multiplexing checks, independent availability diagnostics and permission
+   fallback. Real PMU access is unavailable in this environment; software contracts
+   are tested with a syscall abstraction. OpenMP hardware aggregation is deferred.
 3. **Phase 3 — future:** cache locality, memory organization, working-set and
    memory-access experiments with controlled inputs.
 4. **Phase 4 — future:** OpenMP scaling, thread efficiency and overhead with observed

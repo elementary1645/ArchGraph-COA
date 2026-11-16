@@ -19,8 +19,24 @@ add_library(archgraph_engine STATIC
     src/graph/csr_graph.cpp src/graph/edge_list_io.cpp
     src/algorithms/dijkstra.cpp src/algorithms/delta_stepping.cpp
     src/instrumentation/workload.cpp src/instrumentation/resources.cpp
-    src/project_info.cpp src/analysis/cpu.cpp src/benchmark/static.cpp)
-target_include_directories(archgraph_engine PUBLIC include)
+    src/project_info.cpp src/analysis/cpu.cpp src/benchmark/static.cpp src/profiling/perf.cpp)
+execute_process(COMMAND git rev-parse HEAD WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    OUTPUT_VARIABLE ARCHGRAPH_REVISION OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+execute_process(COMMAND git status --porcelain WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    OUTPUT_VARIABLE ARCHGRAPH_STATUS RESULT_VARIABLE ARCHGRAPH_STATUS_RESULT OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+if(NOT ARCHGRAPH_REVISION)
+    set(ARCHGRAPH_REVISION "unavailable")
+endif()
+set(ARCHGRAPH_DIRTY "false")
+if(NOT ARCHGRAPH_STATUS_RESULT EQUAL 0)
+    set(ARCHGRAPH_DIRTY "unavailable")
+elseif(ARCHGRAPH_STATUS)
+    set(ARCHGRAPH_DIRTY "true")
+endif()
+string(TOUPPER "${CMAKE_BUILD_TYPE}" ARCHGRAPH_BUILD_UPPER)
+set(ARCHGRAPH_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_${ARCHGRAPH_BUILD_UPPER}}; OpenMP=${OpenMP_CXX_FLAGS}; warnings=-Wall -Wextra -Wpedantic -Wconversion -Wshadow; Werror=${ARCHGRAPH_WARNINGS_AS_ERRORS}")
+configure_file(cmake/build_info.hpp.in generated/archgraph_build.hpp @ONLY)
+target_include_directories(archgraph_engine PUBLIC include PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")
 target_compile_definitions(archgraph_engine PRIVATE DYNAGRAPH_VERSION="${PROJECT_VERSION}" ARCHGRAPH_BUILD_TYPE="${CMAKE_BUILD_TYPE}")
 target_link_libraries(archgraph_engine PUBLIC OpenMP::OpenMP_CXX Threads::Threads)
 archgraph_warnings(archgraph_engine)

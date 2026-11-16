@@ -1,9 +1,10 @@
 # ArchGraph-COA
 
 A C++17/OpenMP CPU Architecture-Aware Graph Processing and Performance Analyzer.
-Phase 1 provides a validated graph engine, CPU/build metadata and repeated,
-verified wall-clock measurements. It does not measure hardware cycles, instructions,
-IPC or cache misses and makes no speedup claim.
+Phase 2 extends the validated graph engine with optional Linux hardware counters
+for sequential Dijkstra: cycles, instructions, generic cache and branch events,
+and valid derived ratios. Repeated verified wall timing works for both algorithms,
+including environments that deny counter access. No speedup claim is made.
 
 The graph engine is imported from [DynaGraph-HPC](https://github.com/elementary1645/Dynagraph-HPC)
 at `1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9`; see
@@ -32,7 +33,7 @@ build/release/archgraph bench --input data/chain/graph.txt --source 0 --algorith
 
 Generation requires a new output directory. Bundles retain the upstream graph,
 seed and manifest format, including unused update traces for format compatibility;
-Phase 1 executes only static graphs. Repeating the same specification produces
+The current engine executes only static graphs. Repeating the same specification produces
 identical graph/trace bytes and fingerprints. Save the manifest alongside results.
 Library-only builds can use `-DBUILD_TESTING=OFF` without Python.
 
@@ -47,9 +48,26 @@ and observed metadata. Loading, reference Dijkstra, warmups, verification and JS
 serialization are outside measured regions; allocation inside the algorithm is
 included. Actual timed team size is unavailable because instrumentation is disabled.
 Timing includes scheduler/runtime overhead; CPU hints do not imply exclusive cores.
-There are no historical benchmark results in this repository.
+No historical DynaGraph benchmark results are presented as ArchGraph measurements.
 
-See [architecture](docs/ARCHITECTURE.md), [COA mapping](docs/COA_CONCEPT_MAPPING.md),
+Optional profiling (the graph bundle above must exist):
+
+```sh
+build/release/archgraph --counter-diagnostics
+build/release/archgraph bench --input data/chain/graph.txt --source 0 --algorithm dijkstra --repetitions 10 --hardware-counters
+```
+
+`--hardware-counters` reports per-event status and nulls when access is denied.
+Delta-stepping hardware counters return `unsupported_scope`; OpenMP aggregation
+is deferred. Wall time and correctness checks continue. Benchmarks now include
+median wall ns, individual runs, a deterministic CSR fingerprint, raw scheduling
+information, derived ratios and configure-time build provenance. Generic cache
+events are not separate L1/L2/L3 measurements. No root access or permission changes
+are needed. For optional real-PMU tests, configure with
+`-DARCHGRAPH_HARDWARE_TESTS=ON`; inaccessible hardware is explicitly skipped.
+
+See [CPU profiling](docs/CPU_PROFILING.md), [counter definitions](docs/PERFORMANCE_COUNTERS.md),
+[architecture](docs/ARCHITECTURE.md), [COA mapping](docs/COA_CONCEPT_MAPPING.md),
 [validation](docs/VALIDATION.md) and [roadmap](docs/ROADMAP.md).
 
 Repository layout:
@@ -63,6 +81,7 @@ src/graph/                    CSR and loading
 src/algorithms/               Dijkstra and delta-stepping
 src/instrumentation/          retained optional diagnostic dependencies
 src/analysis/                 CPU/build metadata
+src/profiling/                Linux PMU counters and diagnostics
 src/benchmark/                static wall-clock experiments
 benchmarks/python/            deterministic generation and verification
 benchmarks/configs/            chain recipe

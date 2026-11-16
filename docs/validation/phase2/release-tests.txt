@@ -1,0 +1,46 @@
+Internal ctest changing into directory: /workspaces/ArchGraph-COA/build/phase2-release
+Test project /workspaces/ArchGraph-COA/build/phase2-release
+      Start  1: project_info
+ 1/17 Test  #1: project_info .....................   Passed    0.01 sec
+      Start  2: openmp
+ 2/17 Test  #2: openmp ...........................   Passed    0.01 sec
+      Start  3: csr_graph
+ 3/17 Test  #3: csr_graph ........................   Passed    0.01 sec
+      Start  4: edge_list_io
+ 4/17 Test  #4: edge_list_io .....................   Passed    0.01 sec
+      Start  5: dijkstra
+ 5/17 Test  #5: dijkstra .........................   Passed    0.15 sec
+      Start  6: delta_stepping
+ 6/17 Test  #6: delta_stepping ...................   Passed    4.23 sec
+      Start  7: cli_help
+ 7/17 Test  #7: cli_help .........................   Passed    0.01 sec
+      Start  8: cli_version
+ 8/17 Test  #8: cli_version ......................   Passed    0.01 sec
+      Start  9: cli_cpu
+ 9/17 Test  #9: cli_cpu ..........................   Passed    0.01 sec
+      Start 10: cli_invalid
+10/17 Test #10: cli_invalid ......................   Passed    0.01 sec
+      Start 11: cli_sssp
+11/17 Test #11: cli_sssp .........................   Passed    0.57 sec
+      Start 12: workload_artifacts
+12/17 Test #12: workload_artifacts ...............   Passed    1.97 sec
+      Start 13: workload_loader
+13/17 Test #13: workload_loader ..................   Passed    0.29 sec
+      Start 14: benchmark_integration
+14/17 Test #14: benchmark_integration ............   Passed    0.26 sec
+      Start 15: perf_unit
+15/17 Test #15: perf_unit ........................   Passed    0.00 sec
+      Start 16: profiling_integration
+16/17 Test #16: profiling_integration ............   Passed    0.37 sec
+      Start 17: perf_hardware
+17/17 Test #17: perf_hardware ....................***Skipped   0.01 sec
+
+100% tests passed, 0 tests failed out of 17
+
+Label Time Summary:
+hardware    =   0.01 sec*proc (1 test)
+
+Total Test time (real) =   7.93 sec
+
+The following tests did not run:
+	 17 - perf_hardware (Skipped)

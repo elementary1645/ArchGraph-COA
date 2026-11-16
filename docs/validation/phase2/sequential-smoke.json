@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "algorithm": "dijkstra",
+  "status": "completed",
+  "source": 0,
+  "vertices": 8,
+  "edges": 7,
+  "delta": 0,
+  "requested_threads": 0,
+  "actual_threads": null,
+  "input_identity": {
+    "method": "fnv1a64-csr-le-u64-v1",
+    "value": "91e7fc35277d07af"
+  },
+  "warmups": 1,
+  "repetitions": 10,
+  "verified": true,
+  "unit": "wall_ns",
+  "median_wall_ns": 241,
+  "samples": [
+    761,
+    321,
+    241,
+    241,
+    221,
+    230,
+    260,
+    220,
+    241,
+    241
+  ],
+  "hardware_counters_requested": true,
+  "counter_status": "permission_denied",
+  "measurement_scope": {
+    "hardware": "calling_thread_user_space",
+    "inherit": false,
+    "kernel": false,
+    "hypervisor": false,
+    "thread_aggregation": false,
+    "groups": [
+      [
+        "cpu_cycles",
+        "instructions"
+      ],
+      [
+        "cache_references",
+        "cache_misses"
+      ],
+      [
+        "branch_instructions",
+        "branch_misses"
+      ]
+    ]
+  },
+  "warnings": [
+    "Counter windows include clock/control boundary overhead; multiplexed values are scaled estimates; inspect every per-event status. Shared/virtualized CPUs do not establish controlled performance."
+  ],
+  "runs": [
+    {
+      "index": 0,
+      "wall_ns": 761,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 1,
+      "wall_ns": 321,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 2,
+      "wall_ns": 241,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 3,
+      "wall_ns": 241,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 4,
+      "wall_ns": 221,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 5,
+      "wall_ns": 230,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 6,
+      "wall_ns": 260,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 7,
+      "wall_ns": 220,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 8,
+      "wall_ns": 241,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    },
+    {
+      "index": 9,
+      "wall_ns": 241,
+      "counter_status": "permission_denied",
+      "counters": {
+        "cpu_cycles": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_references": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "cache_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_instructions": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        },
+        "branch_misses": {
+          "status": "permission_denied",
+          "errno": 13,
+          "diagnostic": "Permission denied",
+          "raw": null,
+          "time_enabled_ns": null,
+          "time_running_ns": null,
+          "value": null
+        }
+      },
+      "derived": {
+        "ipc": null,
+        "cpi": null,
+        "cache_miss_ratio": null,
+        "branch_miss_ratio": null
+      }
+    }
+  ],
+  "metadata": {
+    "schema_version": 1,
+    "cpu_model": " AMD EPYC 9V74 80-Core Processor",
+    "cpu_model_source": "/proc/cpuinfo",
+    "logical_cpu_hint": 2,
+    "openmp_max_threads": 2,
+    "openmp_spec": 201511,
+    "compiler": "13.3.0",
+    "build_type": "Release",
+    "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8",
+    "build_dirty": "true",
+    "compiler_flags": " -O3 -DNDEBUG; OpenMP=-fopenmp; warnings=-Wall -Wextra -Wpedantic -Wconversion -Wshadow; Werror=ON",
+    "clock": "std::chrono::steady_clock",
+    "hardware_counters_available": null
+  }
+}
