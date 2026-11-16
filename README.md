@@ -1,171 +1,174 @@
 # ArchGraph-COA
 
-A C++17/OpenMP CPU Architecture-Aware Graph Processing and Performance Analyzer.
-Phase 5 adds an optional interactive Streamlit dashboard over verified Phase 2–4
-results, including CPU counters, memory/locality and multicore scaling. The C++
-engine and earlier correctness/profiling workflows remain independent of UI dependencies.
-Verified wall timing continues when PMU access is denied; no cache transition or
-speedup is inferred from elapsed time alone.
+**CPU Architecture-Aware Graph Processing and Performance Analysis** — a
+fifth-semester Computer Organization and Architecture project in C++17/OpenMP
+with an optional Python analytics dashboard.
 
-The graph engine is imported from [DynaGraph-HPC](https://github.com/elementary1645/Dynagraph-HPC)
-at `1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9`; see
-[provenance](docs/IMPORT_PROVENANCE.md) for attribution, file hashes and licensing status.
-The original `dynagraph` C++ namespace is retained to minimize algorithm changes.
+The project uses correct graph workloads to investigate instruction metrics,
+memory layout, cache/locality opportunities and thread overhead. It records real
+wall timing and available hardware events with explicit scope, provenance and
+unavailable states. It does not infer cache misses from elapsed time or treat
+shared-host SMT observations as controlled physical multicore scaling.
 
-Requires CMake >=3.21, a C++17 compiler with OpenMP and Threads support, and
-Python >=3.8 for tests and deterministic generation. No downloaded build dependencies,
-source checkout or submodule is needed. GCC is validated; hosted CI is configured
-for Ubuntu Debug and Release.
+**Final academic materials:** [delivery index](docs/academic/README.md),
+[project report](docs/academic/PROJECT_REPORT.md), [editable slides](docs/academic/PRESENTATION.pptx),
+[demo](docs/academic/LIVE_DEMO.md), [60 viva answers](docs/academic/VIVA_QA.md),
+[final verification](docs/academic/FINAL_VALIDATION.md).
+
+**Licensing:** the selectively imported DynaGraph-HPC source is attributed to
+commit `1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9`. No upstream license grant was
+recorded. Preserve [attribution](docs/IMPORT_PROVENANCE.md) and resolve
+[licensing clearance](docs/academic/LICENSING.md) before claiming unrestricted
+redistribution or an open-source license. No institutional approval is asserted.
+
+## Problem and features
+
+A graph algorithm's complexity alone does not explain CPU execution time. Loads,
+branches, data representation, translation, scheduling and synchronization matter.
+ArchGraph connects these COA concepts to reproducible, verified experiments:
+
+| Feature | Implemented behavior |
+| --- | --- |
+| Correct graph processing | Strict directed weighted edge-list loader, CSR, lazy-heap Dijkstra, OpenMP delta-stepping and independent test oracles |
+| CPU instrumentation | Repeated steady-clock timing; optional Linux calling-thread PMU pairs; validated multiplexing and honest null/status fallback |
+| Memory/cache/locality | CSR/adjacency accounting, matched-output queries, indexed spatial/temporal kernels and metadata-sized working-set studies |
+| Multicore analysis | Topology/mask/quota discovery, observed teams, seeded randomized blocks, correct baseline speedup/efficiency and dedicated synchronization kernels |
+| Local dashboard | Seven Streamlit/Pandas/Plotly views, 13 authentic archived receipts, bounded JSON/CSV imports, filters and reproducible exports |
+| Academic package | Report, seven diagrams, 15-slide notes/PPTX, scientific figures, 60 viva answers, fresh-output scripts and evaluation |
+
+## Architecture and COA mapping
+
+Deterministic graph specification → generator/manifest → validated C++ engine →
+verified JSON/supported CSV → safe dashboard adapters → charts and exports.
+The dashboard reads results; it does not execute uploads or launch benchmarks.
+See [architecture](docs/ARCHITECTURE.md) and [seven diagrams](docs/academic/ARCHITECTURE_DIAGRAMS.md).
+
+| COA topic | Project connection |
+| --- | --- |
+| Instructions and cycles | Optional real event pairs and same-scope IPC/CPI, distinct from software work and wall time |
+| Memory organization | Contiguous CSR versus row-vector adjacency storage, capacity estimates and separate whole-process RSS |
+| Cache hierarchy/locality | Spatial/temporal indexed reads, active working sets and metadata capacity markers, without unsupported miss attribution |
+| Parallel execution | MIMD OpenMP teams, atomics/barriers, scheduling/reduction and physical/logical/SMT distinctions |
+| Performance models | Same-algorithm median speedup, efficiency, descriptive variability and explicitly assumed Amdahl curves |
+
+Full [COA concept mapping](docs/COA_CONCEPT_MAPPING.md) and [academic analysis](docs/academic/PROJECT_REPORT.md)
+explain boundaries and actual results.
+
+## Requirements and build
+
+Core: CMake >=3.21, C++17 compiler, OpenMP and Threads runtime. Python >=3.8 is
+used for core tests and generation; library-only builds can disable tests.
+Validated platform: Linux x86_64/GCC. Dashboard: optional Python >=3.11 plus
+`requirements-dashboard.txt`. Academic authoring: optional `requirements-academic.txt`.
+No dashboard packages are required to compile or test the C++ engine.
+
+From the repository root, using unused build directories for clean verification:
 
 ```sh
-cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release -DARCHGRAPH_WARNINGS_AS_ERRORS=ON
+cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release -DARCHGRAPH_WARNINGS_AS_ERRORS=ON -DARCHGRAPH_HARDWARE_TESTS=ON
 cmake --build build/release --parallel 2
 ctest --test-dir build/release --output-on-failure
-python3 -B benchmarks/python/generate.py generate --spec benchmarks/configs/chain-v1.json --output data/chain
-python3 -B benchmarks/python/generate.py verify --manifest data/chain/manifest.json
 build/release/archgraph --help
 build/release/archgraph --version
 build/release/archgraph --cpu
-build/release/archgraph sssp --input data/chain/graph.txt --source 0 --algorithm dijkstra
-build/release/archgraph sssp --input data/chain/graph.txt --source 0 --algorithm delta-stepping --delta 16 --threads 2
-build/release/archgraph bench --input data/chain/graph.txt --source 0 --algorithm dijkstra --warmups 1 --repetitions 5
-build/release/archgraph bench --input data/chain/graph.txt --source 0 --algorithm delta-stepping --delta 16 --threads 2 --warmups 1 --repetitions 5
 ```
 
-Generation requires a new output directory. Bundles retain the upstream graph,
-seed and manifest format, including unused update traces for format compatibility;
-The current engine executes only static graphs. Repeating the same specification produces
-identical graph/trace bytes and fingerprints. Save the manifest alongside results.
-Library-only builds can use `-DBUILD_TESTING=OFF` without Python.
+For Debug, use another directory and `-DCMAKE_BUILD_TYPE=Debug`.
+`-DBUILD_TESTING=OFF` permits a core library/application build without Python tests.
+Hardware tests explicitly skip when unavailable; a skip is not a measured event.
 
-Graph files begin with `V E`, followed by exactly E records `source destination weight`.
-Vertices are zero-based, edges directed, weights uint32 nonnegative integers;
-comments are unsupported. Invalid graphs/options produce diagnostics and status 2.
-Distances are uint64; unreachable vertices appear as JSON `null`.
-SSSP JSON includes the actual OpenMP team size for delta-stepping.
+## Generate and run
 
-Benchmark JSON contains individual `wall_ns` samples, configuration, verification,
-and observed metadata. Loading, reference Dijkstra, warmups, verification and JSON
-serialization are outside measured regions; allocation inside the algorithm is
-included. Actual timed team size is unavailable because instrumentation is disabled.
-Timing includes scheduler/runtime overhead; CPU hints do not imply exclusive cores.
-No historical DynaGraph benchmark results are presented as ArchGraph measurements.
-
-Optional profiling (the graph bundle above must exist):
+Generation requires a new output directory. Bundles retain graph/trace seeds and
+hash manifests; update traces are format-compatible artifacts, not replayed by
+this static engine.
 
 ```sh
-build/release/archgraph --counter-diagnostics
-build/release/archgraph bench --input data/chain/graph.txt --source 0 --algorithm dijkstra --repetitions 10 --hardware-counters
+DEMO_PARENT=$(mktemp -d /tmp/archgraph-coa.XXXXXX)
+python3 -B benchmarks/python/generate.py generate --spec benchmarks/configs/chain-v1.json --output "$DEMO_PARENT/graph"
+python3 -B benchmarks/python/generate.py verify --manifest "$DEMO_PARENT/graph/manifest.json"
+build/release/archgraph sssp --input "$DEMO_PARENT/graph/graph.txt" --source 0 --algorithm dijkstra
+build/release/archgraph sssp --input "$DEMO_PARENT/graph/graph.txt" --source 0 --algorithm delta-stepping --delta 16 --threads 1
+build/release/archgraph bench --input "$DEMO_PARENT/graph/graph.txt" --source 0 --algorithm dijkstra --repetitions 10 --hardware-counters
 ```
 
-`--hardware-counters` reports per-event status and nulls when access is denied.
-Delta-stepping hardware counters return `unsupported_scope`; OpenMP aggregation
-is deferred. Wall time and correctness checks continue. Benchmarks now include
-median wall ns, individual runs, a deterministic CSR fingerprint, raw scheduling
-information, derived ratios and configure-time build provenance. Generic cache
-events are not separate L1/L2/L3 measurements. No root access or permission changes
-are needed. For optional real-PMU tests, configure with
-`-DARCHGRAPH_HARDWARE_TESTS=ON`; inaccessible hardware is explicitly skipped.
+Input starts with `V E` and exactly E `source destination weight` records; vertices
+are zero-based and weights are uint32 nonnegative. Invalid counts/numbers/endpoints
+and duplicate directed edges are rejected. SSSP distances are uint64 with unreachable
+values serialized as null. Delta-stepping requires positive delta.
 
-See [CPU profiling](docs/CPU_PROFILING.md), [counter definitions](docs/PERFORMANCE_COUNTERS.md),
-[architecture](docs/ARCHITECTURE.md), [COA mapping](docs/COA_CONCEPT_MAPPING.md),
-[validation](docs/VALIDATION.md) and [roadmap](docs/ROADMAP.md).
+Loading/oracle/verification/output are outside benchmark timing; graph algorithm
+allocation and OpenMP startup are inside. Calling-thread PMU data for sequential
+Dijkstra are not process-wide totals. Delta-stepping PMU aggregation is unsupported,
+including one-thread requests. Wall timing continues with denied/unsupported events.
 
-Phase 3 demonstration:
+## Example experiments
 
 ```sh
-cmake -S . -B build/phase3-release -DCMAKE_BUILD_TYPE=Release -DARCHGRAPH_WARNINGS_AS_ERRORS=ON -DARCHGRAPH_HARDWARE_TESTS=ON
-cmake --build build/phase3-release --parallel 2
-ctest --test-dir build/phase3-release --output-on-failure
-python3 -B benchmarks/python/generate.py generate --spec benchmarks/configs/chain-v1.json --output data/phase3-chain
-python3 -B benchmarks/python/generate.py verify --manifest data/phase3-chain/manifest.json
-build/phase3-release/archgraph memory --input data/phase3-chain/graph.txt
-build/phase3-release/archgraph compare-layouts --input data/phase3-chain/graph.txt --source 0 --runs 3
-build/phase3-release/archgraph locality --pattern sequential --size 1048576 --runs 3
-build/phase3-release/archgraph locality --pattern strided --size 1048576 --stride 16 --runs 3
-build/phase3-release/archgraph locality --pattern random --size 1048576 --seed 1 --runs 3 --hardware-counters
-build/phase3-release/archgraph locality --pattern temporal --size 1048576 --working-set 4096 --accesses 1048576 --runs 3
-build/phase3-release/archgraph locality --pattern csr --input data/phase3-chain/graph.txt --passes 3 --runs 3
-build/phase3-release/archgraph locality --pattern adjacency --input data/phase3-chain/graph.txt --passes 3 --runs 3
-build/phase3-release/archgraph cache-study --runs 3 --hardware-counters
+build/release/archgraph memory --input "$DEMO_PARENT/graph/graph.txt"
+build/release/archgraph compare-layouts --input "$DEMO_PARENT/graph/graph.txt" --source 0 --runs 5
+build/release/archgraph locality --pattern sequential --size 1048576 --accesses 131072 --seed 42 --runs 5
+build/release/archgraph locality --pattern random --size 1048576 --accesses 131072 --seed 42 --runs 5 --hardware-counters
+build/release/archgraph locality --pattern temporal --size 1048576 --working-set 4096 --accesses 131072 --seed 42 --runs 5
+build/release/archgraph cache-study --sizes 4096,32768,262144,1048576 --accesses 131072 --seed 42 --runs 5
+build/release/archgraph scaling --input "$DEMO_PARENT/graph/graph.txt" --source 0 --threads 1 --repetitions 15 --csv "$DEMO_PARENT/scaling.csv"
 ```
 
-Generation needs a new output directory. Every new command supports `--help`.
-Sizes are bytes, strides are elements. Full spatial sweeps hold data/index read
-counts constant; graph loops have additional representation-specific work. Cache
-studies size data arrays from actual metadata (or explicit `--sizes`), record index
-storage too, and report omitted targets above `--max-size`. Memory accounting
-separates payload, capacity, estimated control overhead and whole-process RSS.
-The adjacency list preserves CSR's duplicate-edge rejection policy. New experiments
-can request optional L1D/last-level-cache/DTLB read pairs without assuming support;
-old `bench` commands retain their original generic hardware event set. All Phase 3
-experiments are single-threaded; OpenMP hardware aggregation remains deferred.
+Inspect topology before adding threads. Use `--threads 1,2` only within the safe
+CPU/quota/runtime ceiling; explicit oversubscription warns. Scaling inserts a
+one-thread delta-stepping baseline and observes actual teams. Dijkstra is an oracle,
+not its same-algorithm thread baseline. A tiny chain may have little parallel work.
+The [fresh demo script](docs/academic/scripts/run_demo.py) adapts worker counts and
+captures all relevant output types into a new directory.
 
-See [cache hierarchy](docs/CACHE_HIERARCHY.md), [memory organization](docs/MEMORY_ORGANIZATION.md),
-[locality and JSON schema](docs/LOCALITY_EXPERIMENTS.md), and
-[Phase 3 validation](docs/PHASE3_VALIDATION.md) for scope, live-demo guidance and actual results.
-
-Repository layout:
-
-```text
-.github/workflows/ci.yml       Debug/Release CI
-apps/archgraph.cpp            CLI
-include/archgraph/            analysis and benchmark interfaces
-include/dynagraph/            retained graph-engine interfaces
-src/graph/                    CSR and loading
-src/algorithms/               Dijkstra and delta-stepping
-src/instrumentation/          retained optional diagnostic dependencies
-src/analysis/                 CPU/build metadata
-src/profiling/                Linux PMU counters and diagnostics
-src/benchmark/                static wall-clock experiments
-src/experiments/              layouts, locality kernels and cache-study runner
-benchmarks/python/            deterministic generation and verification
-benchmarks/configs/            chain recipe
-tests/                        native, CLI and Python tests
-docs/                         architecture, provenance, roadmap and validation
-docs/validation/              local build/test receipts
-```
-
-## Phase 4: multicore and thread scaling
-
-Verified delta-stepping scaling uses a one-thread delta-stepping baseline,
-seeded randomized blocks, recorded warmups and individual trials, median/range/MAD,
-observed teams, CPU affinity/quota topology and honest OpenMP PMU limitations.
-Dedicated equal-work kernels compare static/dynamic chunks and reduction,
-atomic and critical synchronization with optional verified worker affinity.
+## Dashboard startup
 
 ```sh
-build/phase4-release/archgraph --cpu
-build/phase4-release/archgraph scaling --input data/phase3-grid/graph.txt --source 0 --threads 1,2 --repetitions 15 --seed 42 --csv /tmp/scaling.csv
-build/phase4-release/archgraph parallel-kernels --threads 1,2 --chunks 1,64 --workload irregular --affinity compact --repetitions 15
-```
-
-Check topology first and use only supported thread counts. The current validation
-host exposes two SMT contexts on one physical core, so it cannot demonstrate
-scaling across independent physical cores. See [live demo and result contract](docs/SCALING_EXPERIMENTS.md),
-[multicore architecture](docs/MULTICORE_ARCHITECTURE.md),
-[Amdahl assumptions](docs/AMDAHLS_LAW.md) and [validation](docs/PHASE4_VALIDATION.md).
-
-## Phase 5: interactive performance dashboard
-
-Python 3.11+ is required only for this optional UI. From the repository root:
-
-```sh
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dashboard.txt
 python -m streamlit run dashboard/app.py --server.address 127.0.0.1
-python -m pytest dashboard/tests -q
 ```
 
-Seven views cover CPU overview, hardware/wall-clock performance, memory accounting,
-cache/locality, multicore scaling, a theoretical Amdahl explorer and an experiment
-explorer with safe uploads, filters and downloads. Demo mode uses 13 authentic,
-checksum-checked archived receipts; it works with denied PMU access. Unknown values
-remain unavailable, distinct environments stay separate and one-thread delta-stepping
-is its own scaling baseline. No graph algorithm changes or cloud deployment are required.
+Open the printed local address; forward the port if remote. Navigation covers CPU
+overview/performance, memory, cache/locality, multicore, theoretical Amdahl and
+experiment explorer. Archive mode uses hash-checked actual receipts, not live host
+measurements or synthetic substitutes. Uploaded results retain unverified provenance.
+Unknown metadata/counters remain unavailable; standalone CSV enables raw inspection
+without inferred speedup. See [dashboard guide](docs/DASHBOARD_GUIDE.md).
 
-See the [dashboard guide](docs/DASHBOARD_GUIDE.md),
-[five-minute professor demo](docs/DEMO_WORKFLOW.md) and
-[Phase 5 validation](docs/PHASE5_VALIDATION.md) for schemas, provenance, limitations
-and test evidence. CMake/CTest do not require the dashboard packages.
+## Testing and reproducibility
+
+```sh
+ctest --test-dir build/release --output-on-failure
+python -m pytest dashboard/tests -q
+python3 docs/academic/scripts/verify_evidence.py
+python3 docs/academic/scripts/run_demo.py --cli build/release/archgraph --output-dir "$DEMO_PARENT/capture"
+```
+
+The final local audit recorded 24 passes and two PMU skips per Debug/Release/
+sanitizer CTest configuration, plus 102 dashboard pytest passes. No test weakening
+or algorithm rewrite was used. See [exact final commands/results](docs/academic/FINAL_VALIDATION.md)
+and [full reproduction/authoring guide](docs/academic/REPRODUCIBILITY.md).
+
+## Evidence, status and limitations
+
+All six phases are implemented as a technical academic delivery. See
+[roadmap](docs/ROADMAP.md), [final evaluation](docs/academic/FINAL_EVALUATION.md),
+[Phase 1 validation](docs/VALIDATION.md), [CPU instrumentation](docs/CPU_PROFILING.md),
+[counter scope](docs/PERFORMANCE_COUNTERS.md), [Phase 3 validation](docs/PHASE3_VALIDATION.md),
+[Phase 4 validation](docs/PHASE4_VALIDATION.md), and [Phase 5 validation](docs/PHASE5_VALIDATION.md).
+
+- Hardware counters were denied or unsupported in recorded workload receipts;
+  no measured IPC or verified L1/L2/L3 transition is claimed.
+- Archived scaling exposes one reported physical core with two SMT contexts on
+  shared/virtualized resources, not controlled independent-core scaling.
+- Representation estimates differ from physical memory. Repeated medians/range/MAD
+  are descriptive, not statistical significance or causal proof.
+- Original imported-source attribution is retained; licensing clearance is unresolved.
+- Browser and PowerPoint/projector rendering were unavailable for final visual QA.
+  Programmatic tests, readiness checks and structural checks do not replace them.
+
+The project is prepared for a qualified academic demonstration and viva. Resolve
+licensing and perform manual display review before an unrestricted release or
+formal presentation acceptance claim. No merge or automatic PR is part of delivery.

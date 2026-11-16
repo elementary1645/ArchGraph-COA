@@ -1,0 +1,19 @@
+{
+  "report_sections": 19,
+  "viva_answers": 60,
+  "slides": 15,
+  "notes_checked": 15,
+  "mermaid_blocks": 7,
+  "local_link_targets_checked": 116,
+  "scientific_figures": 4,
+  "native_chart_data_checked": 2,
+  "receipt_hashes": 13,
+  "csv_json_rows": 306,
+  "derived_results_repeatable": true,
+  "overwrite_refused": true,
+  "not_verified": [
+    "browser rendering",
+    "presentation-engine rendering",
+    "external link availability at runtime"
+  ]
+}

@@ -19,8 +19,11 @@
    JSON/CSV imports, seven views, authentic archived demo receipts, filtered exports,
    null-aware hardware metrics and explicitly theoretical Amdahl exploration.
    Visual browser QA and authenticated physical-host equivalence are not established.
-6. **Phase 6 — future:** academic report, presentation, architecture diagrams,
-   reproducible demonstration and viva preparation.
+6. **Phase 6 — implemented:** 19-section academic report, seven Mermaid diagrams,
+   15-slide notes/editable PPTX, 60 viva answers, qualified final evaluation,
+   PMU-independent demo and fresh-output reproduction/authoring scripts.
+   Final builds/tests/sanitizers and archive integrity pass; manual browser/slide
+   rendering and upstream licensing clearance remain explicit conditions.
 
 Each phase needs its own correctness and measurement validation. No historical
 DynaGraph experiments establish ArchGraph performance. Dynamic graph repair and

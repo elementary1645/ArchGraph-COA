@@ -1,0 +1,756 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "docs/validation/phase5/receipts/memory.json",
+      "sha256": "eb6a64bd3769e778bd84c345e9271d94f78fbffcf69cc94c7d2369fb7e9cd1e2",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "sha256": "b9e80ef953f96b2bc689b51b853ff70f701e42626cb831fe2a425917ad5ba3dc",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-sequential.json",
+      "sha256": "9cd60730173616a8c0f5153db0d3e69842fcb1a6e233f65ac0959820e71e8f19",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-strided.json",
+      "sha256": "12ec928f90ff4855bd9018d6ee2fa3bfd7e7ada8ca95bfd2cc531f5c7344fbe4",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-random.json",
+      "sha256": "10c1767a6b978a43b5776728f959db624a79631b8babec17a447624621116093",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-temporal.json",
+      "sha256": "3edc320a804127121915b4ff2424ecb157c2002f0de9d18f341cf0f74fb4381a",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "sha256": "e79a05f0b289a1af7789cb070ff23a1e20088e1f70e1f18d5fcf39f2d26181ea",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "e50b30e43c1a0e63c0ab1318f2ebeac34cc4e875",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase4/scaling.json",
+      "sha256": "e37fae304b254393637f6db8c4f638ce563eaa17286e7ce0725296d7c20caec1",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "sha256": "169e5d9aeb90dbc755fde104455474b389958a4af7a626ee91130fcab4c93105",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase4/cpu.json",
+      "sha256": "28f8574cd1e9932a3195f3e4fde34cdd598ceeef52db463ceda73be4cac814d5",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 7763 64-Core Processor",
+      "build_revision": "0fa39363775133feb1dae9480ca4852881d059c6",
+      "build_type": "Release",
+      "topology": {
+        "logical_processors": 2,
+        "physical_cores_in_affinity": 1,
+        "sockets_in_affinity": 1,
+        "smt_detected": true,
+        "affinity_known": true,
+        "available_cpus": [
+          0,
+          1
+        ],
+        "affinity_restricted": false,
+        "quota_status": "unlimited_visible",
+        "quota_cpus": null,
+        "safe_thread_limit": 2,
+        "limitations": [
+          "Available logical processors share physical cores (SMT); thread count is not independent core count",
+          "Visible topology and quotas do not establish dedicated cores; hidden ancestor limits and shared-host interference are possible"
+        ]
+      }
+    },
+    {
+      "path": "docs/validation/phase2/sequential-smoke.json",
+      "sha256": "bc077af82af182d55f85b3e812ded3aef2bfcb2ceebf24814693310fd5b0b145",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 9V74 80-Core Processor",
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8",
+      "build_type": "Release",
+      "topology": null
+    },
+    {
+      "path": "docs/validation/phase2/parallel-smoke.json",
+      "sha256": "4a382ef811b9c23bcb8e485ab600c7e85128e26797de4c020c7101f207bb6523",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 9V74 80-Core Processor",
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8",
+      "build_type": "Release",
+      "topology": null
+    },
+    {
+      "path": "docs/validation/phase2/diagnostic.json",
+      "sha256": "4aef626e9a925c84ade20ec4509be7800c91ab5ae3ddbb5d0147fcad624da0a2",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained",
+      "cpu_model": " AMD EPYC 9V74 80-Core Processor",
+      "build_revision": "b241da5d68ba94017fcdc3ea17df1384be81f1d8",
+      "build_type": "Release",
+      "topology": null
+    }
+  ],
+  "timings": [
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "configuration": "csr Dijkstra",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 5,
+      "median_ns": 241.0,
+      "min_ns": 230.0,
+      "max_ns": 471.0,
+      "mad_ns": 11.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "configuration": "adjacency Dijkstra",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 5,
+      "median_ns": 170.0,
+      "min_ns": 160.0,
+      "max_ns": 241.0,
+      "mad_ns": 10.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-sequential.json",
+      "configuration": "sequential \u00b7 set 1",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 1048576,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 81673.0,
+      "min_ns": 81312.0,
+      "max_ns": 114734.0,
+      "mad_ns": 361.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-strided.json",
+      "configuration": "strided \u00b7 set 1",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 1048576,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 279482.0,
+      "min_ns": 273471.0,
+      "max_ns": 307746.0,
+      "mad_ns": 6011.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-random.json",
+      "configuration": "random \u00b7 set 1",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 1048576,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 265837.0,
+      "min_ns": 156162.0,
+      "max_ns": 277829.0,
+      "mad_ns": 11992.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-temporal.json",
+      "configuration": "temporal \u00b7 set 1",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 4096,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 82354.0,
+      "min_ns": 82344.0,
+      "max_ns": 82464.0,
+      "mad_ns": 10.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "configuration": "random \u00b7 set 1",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 4096,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 82464.0,
+      "min_ns": 82374.0,
+      "max_ns": 128721.0,
+      "mad_ns": 90.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "configuration": "random \u00b7 set 2",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 32768,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 81502.0,
+      "min_ns": 81443.0,
+      "max_ns": 81522.0,
+      "mad_ns": 10.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "configuration": "random \u00b7 set 3",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 262144,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 93054.0,
+      "min_ns": 91491.0,
+      "max_ns": 122760.0,
+      "mad_ns": 1563.0
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "configuration": "random \u00b7 set 4",
+      "threads": null,
+      "chunk": null,
+      "active_data_bytes": 1048576,
+      "data_reads": 131072,
+      "n": 5,
+      "median_ns": 162814.0,
+      "min_ns": 158707.0,
+      "max_ns": 258643.0,
+      "mad_ns": 2325.0
+    },
+    {
+      "path": "docs/validation/phase4/scaling.json",
+      "configuration": "delta-stepping",
+      "threads": 2,
+      "chunk": 0,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 2690738.0,
+      "min_ns": 2425492.0,
+      "max_ns": 10924383.0,
+      "mad_ns": 265246.0
+    },
+    {
+      "path": "docs/validation/phase4/scaling.json",
+      "configuration": "delta-stepping",
+      "threads": 1,
+      "chunk": 0,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 3512313.0,
+      "min_ns": 3448333.0,
+      "max_ns": 14749020.0,
+      "mad_ns": 57297.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "dynamic-reduction",
+      "threads": 2,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 8076862.999999999,
+      "min_ns": 8010396.0,
+      "max_ns": 14059742.0,
+      "mad_ns": 65531.00000000001
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-reduction",
+      "threads": 2,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 8178421.999999999,
+      "min_ns": 8014215.0,
+      "max_ns": 21357067.0,
+      "mad_ns": 164207.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-critical",
+      "threads": 2,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 8308698.0,
+      "min_ns": 8273709.999999999,
+      "max_ns": 20198302.0,
+      "mad_ns": 31220.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-atomic",
+      "threads": 2,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 7701441.0,
+      "min_ns": 7625098.0,
+      "max_ns": 40788257.0,
+      "mad_ns": 65813.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-atomic",
+      "threads": 1,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14701420.0,
+      "min_ns": 13901937.0,
+      "max_ns": 23022419.0,
+      "mad_ns": 49353.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-atomic",
+      "threads": 1,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14051287.0,
+      "min_ns": 13873795.0,
+      "max_ns": 23884611.0,
+      "mad_ns": 177492.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-reduction",
+      "threads": 1,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14584793.0,
+      "min_ns": 13614089.0,
+      "max_ns": 19289114.0,
+      "mad_ns": 188301.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-reduction",
+      "threads": 1,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14588540.0,
+      "min_ns": 13593801.0,
+      "max_ns": 28295963.0,
+      "mad_ns": 657569.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-critical",
+      "threads": 2,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 7980184.0,
+      "min_ns": 7952810.0,
+      "max_ns": 22166570.0,
+      "mad_ns": 18582.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-atomic",
+      "threads": 2,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 7994035.0,
+      "min_ns": 7937843.0,
+      "max_ns": 18688073.0,
+      "mad_ns": 51384.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-critical",
+      "threads": 1,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 15032349.0,
+      "min_ns": 14200926.0,
+      "max_ns": 27096602.0,
+      "mad_ns": 774317.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-reduction",
+      "threads": 2,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 7858775.0,
+      "min_ns": 7635538.0,
+      "max_ns": 18086847.0,
+      "mad_ns": 211175.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "dynamic-reduction",
+      "threads": 2,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 7762004.0,
+      "min_ns": 7619691.0,
+      "max_ns": 23019835.0,
+      "mad_ns": 112884.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "dynamic-reduction",
+      "threads": 1,
+      "chunk": 1,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 15183542.0,
+      "min_ns": 14206185.0,
+      "max_ns": 23639642.0,
+      "mad_ns": 176770.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "static-critical",
+      "threads": 1,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14250388.0,
+      "min_ns": 14197690.0,
+      "max_ns": 17566906.0,
+      "mad_ns": 52698.0
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "configuration": "dynamic-reduction",
+      "threads": 1,
+      "chunk": 64,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 15,
+      "median_ns": 14834149.0,
+      "min_ns": 13621213.0,
+      "max_ns": 41464581.0,
+      "mad_ns": 1200113.0
+    },
+    {
+      "path": "docs/validation/phase2/sequential-smoke.json",
+      "configuration": "dijkstra",
+      "threads": 0,
+      "chunk": null,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 10,
+      "median_ns": 241.0,
+      "min_ns": 220.0,
+      "max_ns": 761.0,
+      "mad_ns": 15.0
+    },
+    {
+      "path": "docs/validation/phase2/parallel-smoke.json",
+      "configuration": "delta-stepping",
+      "threads": 2,
+      "chunk": null,
+      "active_data_bytes": null,
+      "data_reads": null,
+      "n": 10,
+      "median_ns": 57095.0,
+      "min_ns": 56474.0,
+      "max_ns": 126999.0,
+      "mad_ns": 586.0
+    }
+  ],
+  "memory": [
+    {
+      "path": "docs/validation/phase5/receipts/memory.json",
+      "vertices": 8,
+      "edges": 7,
+      "layouts": {
+        "csr": {
+          "logical_payload_bytes": 56,
+          "used_metadata_bytes": 72,
+          "capacity_storage_bytes": 128,
+          "container_object_bytes": 72,
+          "container_overhead_estimate_bytes": 144,
+          "allocation_blocks": 3,
+          "allocator_overhead_bytes": null,
+          "accounted_total_bytes": 200,
+          "physical_memory_bytes": null
+        },
+        "adjacency": {
+          "logical_payload_bytes": 56,
+          "used_metadata_bytes": 192,
+          "capacity_storage_bytes": 248,
+          "container_object_bytes": 32,
+          "container_overhead_estimate_bytes": 224,
+          "allocation_blocks": 8,
+          "allocator_overhead_bytes": null,
+          "accounted_total_bytes": 280,
+          "physical_memory_bytes": null
+        }
+      },
+      "process_memory": {
+        "rss_bytes": 4620288,
+        "source": "/proc/self/statm * sysconf(_SC_PAGESIZE); whole-process snapshot, not per-layout allocation"
+      }
+    }
+  ],
+  "scaling": [
+    {
+      "requested_threads": 2,
+      "median_ms": 2.690738,
+      "minimum_ms": 2.425492,
+      "maximum_ms": 10.924383,
+      "mad_ms": 0.265246,
+      "sample_count": 15,
+      "speedup": 1.3053344472780328,
+      "efficiency": 0.6526672236390164
+    },
+    {
+      "requested_threads": 1,
+      "median_ms": 3.512313,
+      "minimum_ms": 3.448333,
+      "maximum_ms": 14.74902,
+      "mad_ms": 0.057297,
+      "sample_count": 15,
+      "speedup": 1.0,
+      "efficiency": 1.0
+    }
+  ],
+  "limitations": [
+    "Archived descriptive results; distinct environments/configurations are not pooled",
+    "PMU unavailable or unsupported; timings do not establish cache transitions",
+    "One visible physical core with SMT in Phase 4; not independent-core scaling"
+  ]
+}
