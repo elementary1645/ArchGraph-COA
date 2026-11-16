@@ -7,8 +7,10 @@
    ratios, multiplexing checks, independent availability diagnostics and permission
    fallback. Real PMU access is unavailable in this environment; software contracts
    are tested with a syscall abstraction. OpenMP hardware aggregation is deferred.
-3. **Phase 3 — future:** cache locality, memory organization, working-set and
-   memory-access experiments with controlled inputs.
+3. **Phase 3 — implemented:** vector-based adjacency-list/CSR comparison, explicit
+   memory accounting, deterministic spatial/temporal read kernels, metadata-sized
+   working-set plans and optional L1D/LL/DTLB read counters with honest fallback.
+   Local timings do not establish cache transitions or controlled speedups.
 4. **Phase 4 — future:** OpenMP scaling, thread efficiency and overhead with observed
    team/affinity information and interference assessment.
 5. **Phase 5 — future:** visualizations of actual CPU, memory, cache and multicore results.

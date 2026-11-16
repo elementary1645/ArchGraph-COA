@@ -1,5 +1,6 @@
 #include "archgraph/benchmark.hpp"
 #include "archgraph/analysis.hpp"
+#include "archgraph/identity.hpp"
 #include "archgraph/perf.hpp"
 #include "dynagraph/algorithms/delta_stepping.hpp"
 #include <algorithm>
@@ -10,7 +11,6 @@
 #include <stdexcept>
 #include <vector>
 namespace archgraph {
-namespace {
 // Noncryptographic identity of loaded CSR: uint64 little-endian counts followed
 // by offsets, destinations and weights, each promoted to uint64 little-endian.
 std::string graph_identity(const dynagraph::CSRGraph& graph) {
@@ -26,7 +26,6 @@ std::string graph_identity(const dynagraph::CSRGraph& graph) {
     for (auto value : graph.weights()) { append(value); }
     std::ostringstream out; out << std::hex << std::setw(16) << std::setfill('0') << hash;
     return out.str();
-}
 }
 int benchmark(const dynagraph::CSRGraph& graph, dynagraph::VertexId source,
               const std::string& algorithm, dynagraph::Distance delta, int threads,

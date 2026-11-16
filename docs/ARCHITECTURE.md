@@ -55,4 +55,29 @@ optionally collect calling-thread user-space counters for sequential Dijkstra;
 OpenMP hardware aggregation remains unsupported. Median wall time, per-run counter
 records, loaded-CSR identity and build provenance extend the existing JSON format.
 See CPU_PROFILING.md and PERFORMANCE_COUNTERS.md for exact scopes and boundaries.
-Cache experiments, affinity-aware scaling and visualization remain future work.
+Affinity-aware scaling and visualization remain future work.
+
+
+## Phase 3 cache and memory experiments
+
+`include/archgraph/layout.hpp` and `src/experiments/layout.cpp` add a vector-of-vectors
+adjacency list, deterministic CSR conversion, explicit storage accounting and an
+isolated adapter of the imported lazy-heap Dijkstra loop. Imported algorithm and
+CSR sources remain unchanged; full outputs are checked against the baseline and
+independent test oracles. Duplicate edges remain rejected in both representations.
+
+`src/analysis/cache.cpp` discovers per-CPU sysfs cache metadata and creates bounded
+half/near/double-capacity data-array plans with explicit/fallback size support.
+`src/experiments/locality.cpp` creates reproducible permutations and read-only
+checksum kernels. `runner.hpp` brackets kernels with the existing monotonic clock
+and optional Phase 2 RAII sessions, validates results outside timing and records
+individual trials/medians. `commands.cpp` builds versioned experiment JSON and
+`cli.cpp` handles strict options separately. Phase 2 graph identity is now shared
+through `identity.hpp`, with its byte encoding unchanged.
+
+The perf backend accepts a separate memory event set (L1D, last-level and DTLB
+read/access-miss pairs) through the existing grouping/error/scaling/cleanup path.
+Generic Phase 2 defaults and old schemas remain unchanged. All Phase 3 kernels
+are single-threaded; elapsed time and counted activity retain distinct scopes.
+See MEMORY_ORGANIZATION.md, CACHE_HIERARCHY.md and LOCALITY_EXPERIMENTS.md for
+accounting, setup boundaries, schema and interpretation limits.

@@ -1,0 +1,59 @@
+[  2%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/csr_graph.cpp.o
+[  4%] Building CXX object CMakeFiles/archgraph_engine.dir/src/graph/edge_list_io.cpp.o
+[  6%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/dijkstra.cpp.o
+[  9%] Building CXX object CMakeFiles/archgraph_engine.dir/src/algorithms/delta_stepping.cpp.o
+[ 11%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/workload.cpp.o
+[ 13%] Building CXX object CMakeFiles/archgraph_engine.dir/src/instrumentation/resources.cpp.o
+[ 15%] Building CXX object CMakeFiles/archgraph_engine.dir/src/project_info.cpp.o
+[ 18%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/cpu.cpp.o
+[ 20%] Building CXX object CMakeFiles/archgraph_engine.dir/src/benchmark/static.cpp.o
+[ 22%] Building CXX object CMakeFiles/archgraph_engine.dir/src/profiling/perf.cpp.o
+[ 25%] Building CXX object CMakeFiles/archgraph_engine.dir/src/analysis/cache.cpp.o
+[ 27%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/layout.cpp.o
+[ 29%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/locality.cpp.o
+[ 31%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/commands.cpp.o
+[ 34%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/cli.cpp.o
+[ 36%] Linking CXX static library libarchgraph_engine.a
+[ 36%] Built target archgraph_engine
+[ 38%] Building CXX object tests/CMakeFiles/test_project_info.dir/test_project_info.cpp.o
+[ 40%] Building CXX object CMakeFiles/archgraph.dir/apps/archgraph.cpp.o
+[ 43%] Linking CXX executable test_project_info
+[ 43%] Built target test_project_info
+[ 45%] Building CXX object tests/CMakeFiles/test_openmp.dir/test_openmp.cpp.o
+[ 47%] Linking CXX executable archgraph
+[ 50%] Linking CXX executable test_openmp
+[ 50%] Built target archgraph
+[ 50%] Built target test_openmp
+[ 52%] Building CXX object tests/CMakeFiles/test_csr_graph.dir/test_csr_graph.cpp.o
+[ 54%] Building CXX object tests/CMakeFiles/test_edge_list_io.dir/test_edge_list_io.cpp.o
+[ 56%] Linking CXX executable test_edge_list_io
+[ 56%] Built target test_edge_list_io
+[ 59%] Building CXX object tests/CMakeFiles/test_dijkstra.dir/test_dijkstra.cpp.o
+[ 61%] Linking CXX executable test_csr_graph
+[ 61%] Built target test_csr_graph
+[ 63%] Building CXX object tests/CMakeFiles/test_delta_stepping.dir/test_delta_stepping.cpp.o
+[ 65%] Linking CXX executable test_dijkstra
+[ 65%] Built target test_dijkstra
+[ 68%] Building CXX object tests/CMakeFiles/test_perf.dir/test_perf.cpp.o
+[ 70%] Linking CXX executable test_perf
+[ 72%] Linking CXX executable test_delta_stepping
+[ 72%] Built target test_perf
+[ 75%] Building CXX object tests/CMakeFiles/test_perf_hardware.dir/test_perf_hardware.cpp.o
+[ 75%] Built target test_delta_stepping
+[ 77%] Building CXX object tests/CMakeFiles/test_layout.dir/test_layout.cpp.o
+[ 79%] Linking CXX executable test_perf_hardware
+[ 79%] Built target test_perf_hardware
+[ 81%] Building CXX object tests/CMakeFiles/test_locality.dir/test_locality.cpp.o
+[ 84%] Linking CXX executable test_layout
+[ 84%] Built target test_layout
+[ 86%] Building CXX object tests/CMakeFiles/test_cache.dir/test_cache.cpp.o
+[ 88%] Linking CXX executable test_locality
+[ 88%] Built target test_locality
+[ 90%] Building CXX object tests/CMakeFiles/test_memory_perf.dir/test_memory_perf.cpp.o
+[ 93%] Linking CXX executable test_memory_perf
+[ 93%] Built target test_memory_perf
+[ 95%] Linking CXX executable test_cache
+[ 97%] Building CXX object tests/CMakeFiles/test_memory_hardware.dir/test_memory_hardware.cpp.o
+[ 97%] Built target test_cache
+[100%] Linking CXX executable test_memory_hardware
+[100%] Built target test_memory_hardware

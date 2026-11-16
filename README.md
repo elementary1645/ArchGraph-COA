@@ -1,10 +1,11 @@
 # ArchGraph-COA
 
 A C++17/OpenMP CPU Architecture-Aware Graph Processing and Performance Analyzer.
-Phase 2 extends the validated graph engine with optional Linux hardware counters
-for sequential Dijkstra: cycles, instructions, generic cache and branch events,
-and valid derived ratios. Repeated verified wall timing works for both algorithms,
-including environments that deny counter access. No speedup claim is made.
+Phase 3 adds deterministic spatial/temporal locality experiments, discovered-cache
+working-set studies, CSR versus adjacency-list memory accounting and verified SSSP
+comparisons. Phase 2 hardware profiling and Phase 1 graph correctness remain intact.
+Verified wall timing continues when PMU access is denied; no cache transition or
+speedup is inferred from elapsed time alone.
 
 The graph engine is imported from [DynaGraph-HPC](https://github.com/elementary1645/Dynagraph-HPC)
 at `1b5eaea38e4fdfb203ea4214f79f05c8e909c7e9`; see
@@ -70,6 +71,40 @@ See [CPU profiling](docs/CPU_PROFILING.md), [counter definitions](docs/PERFORMAN
 [architecture](docs/ARCHITECTURE.md), [COA mapping](docs/COA_CONCEPT_MAPPING.md),
 [validation](docs/VALIDATION.md) and [roadmap](docs/ROADMAP.md).
 
+Phase 3 demonstration:
+
+```sh
+cmake -S . -B build/phase3-release -DCMAKE_BUILD_TYPE=Release -DARCHGRAPH_WARNINGS_AS_ERRORS=ON -DARCHGRAPH_HARDWARE_TESTS=ON
+cmake --build build/phase3-release --parallel 2
+ctest --test-dir build/phase3-release --output-on-failure
+python3 -B benchmarks/python/generate.py generate --spec benchmarks/configs/chain-v1.json --output data/phase3-chain
+python3 -B benchmarks/python/generate.py verify --manifest data/phase3-chain/manifest.json
+build/phase3-release/archgraph memory --input data/phase3-chain/graph.txt
+build/phase3-release/archgraph compare-layouts --input data/phase3-chain/graph.txt --source 0 --runs 3
+build/phase3-release/archgraph locality --pattern sequential --size 1048576 --runs 3
+build/phase3-release/archgraph locality --pattern strided --size 1048576 --stride 16 --runs 3
+build/phase3-release/archgraph locality --pattern random --size 1048576 --seed 1 --runs 3 --hardware-counters
+build/phase3-release/archgraph locality --pattern temporal --size 1048576 --working-set 4096 --accesses 1048576 --runs 3
+build/phase3-release/archgraph locality --pattern csr --input data/phase3-chain/graph.txt --passes 3 --runs 3
+build/phase3-release/archgraph locality --pattern adjacency --input data/phase3-chain/graph.txt --passes 3 --runs 3
+build/phase3-release/archgraph cache-study --runs 3 --hardware-counters
+```
+
+Generation needs a new output directory. Every new command supports `--help`.
+Sizes are bytes, strides are elements. Full spatial sweeps hold data/index read
+counts constant; graph loops have additional representation-specific work. Cache
+studies size data arrays from actual metadata (or explicit `--sizes`), record index
+storage too, and report omitted targets above `--max-size`. Memory accounting
+separates payload, capacity, estimated control overhead and whole-process RSS.
+The adjacency list preserves CSR's duplicate-edge rejection policy. New experiments
+can request optional L1D/last-level-cache/DTLB read pairs without assuming support;
+old `bench` commands retain their original generic hardware event set. All Phase 3
+experiments are single-threaded; OpenMP hardware aggregation remains deferred.
+
+See [cache hierarchy](docs/CACHE_HIERARCHY.md), [memory organization](docs/MEMORY_ORGANIZATION.md),
+[locality and JSON schema](docs/LOCALITY_EXPERIMENTS.md), and
+[Phase 3 validation](docs/PHASE3_VALIDATION.md) for scope, live-demo guidance and actual results.
+
 Repository layout:
 
 ```text
@@ -83,6 +118,7 @@ src/instrumentation/          retained optional diagnostic dependencies
 src/analysis/                 CPU/build metadata
 src/profiling/                Linux PMU counters and diagnostics
 src/benchmark/                static wall-clock experiments
+src/experiments/              layouts, locality kernels and cache-study runner
 benchmarks/python/            deterministic generation and verification
 benchmarks/configs/            chain recipe
 tests/                        native, CLI and Python tests
