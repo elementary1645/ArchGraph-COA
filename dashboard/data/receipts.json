@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "receipts": [
+    {
+      "path": "docs/validation/phase5/receipts/memory.json",
+      "sha256": "eb6a64bd3769e778bd84c345e9271d94f78fbffcf69cc94c7d2369fb7e9cd1e2",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "memory",
+        "--input",
+        "/tmp/archgraph-phase5-jrrmpq9u/chain/graph.txt"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "sha256": "b9e80ef953f96b2bc689b51b853ff70f701e42626cb831fe2a425917ad5ba3dc",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "compare-layouts",
+        "--input",
+        "/tmp/archgraph-phase5-jrrmpq9u/chain/graph.txt",
+        "--source",
+        "0",
+        "--runs",
+        "5"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-sequential.json",
+      "sha256": "9cd60730173616a8c0f5153db0d3e69842fcb1a6e233f65ac0959820e71e8f19",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "sequential",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-strided.json",
+      "sha256": "12ec928f90ff4855bd9018d6ee2fa3bfd7e7ada8ca95bfd2cc531f5c7344fbe4",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "strided",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters",
+        "--stride",
+        "16"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-random.json",
+      "sha256": "10c1767a6b978a43b5776728f959db624a79631b8babec17a447624621116093",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "random",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-temporal.json",
+      "sha256": "3edc320a804127121915b4ff2424ecb157c2002f0de9d18f341cf0f74fb4381a",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "temporal",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters",
+        "--working-set",
+        "4096"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "sha256": "e79a05f0b289a1af7789cb070ff23a1e20088e1f70e1f18d5fcf39f2d26181ea",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "cache-study",
+        "--sizes",
+        "4096,32768,262144,1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    },
+    {
+      "path": "docs/validation/phase4/scaling.json",
+      "sha256": "e37fae304b254393637f6db8c4f638ce563eaa17286e7ce0725296d7c20caec1",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained"
+    },
+    {
+      "path": "docs/validation/phase4/kernels.json",
+      "sha256": "169e5d9aeb90dbc755fde104455474b389958a4af7a626ee91130fcab4c93105",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained"
+    },
+    {
+      "path": "docs/validation/phase4/cpu.json",
+      "sha256": "28f8574cd1e9932a3195f3e4fde34cdd598ceeef52db463ceda73be4cac814d5",
+      "origin": "Archived committed Phase 4 validation receipt \u00b7 original environment retained"
+    },
+    {
+      "path": "docs/validation/phase2/sequential-smoke.json",
+      "sha256": "bc077af82af182d55f85b3e812ded3aef2bfcb2ceebf24814693310fd5b0b145",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained"
+    },
+    {
+      "path": "docs/validation/phase2/parallel-smoke.json",
+      "sha256": "4a382ef811b9c23bcb8e485ab600c7e85128e26797de4c020c7101f207bb6523",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained"
+    },
+    {
+      "path": "docs/validation/phase2/diagnostic.json",
+      "sha256": "4aef626e9a925c84ade20ec4509be7800c91ab5ae3ddbb5d0147fcad624da0a2",
+      "origin": "Archived committed Phase 2 validation receipt \u00b7 original environment retained"
+    }
+  ]
+}

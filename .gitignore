@@ -3,3 +3,6 @@
 /results/
 __pycache__/
 *.pyc
+.venv/
+.venv-dashboard/
+.pytest_cache/

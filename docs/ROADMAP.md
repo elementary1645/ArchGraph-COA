@@ -15,7 +15,10 @@
    blocks, efficiency/Amdahl analysis, topology/quota reporting, equal-work scheduling
    and synchronization kernels, optional kernel affinity, JSON/CSV and validation.
    Shared-host SMT observations do not establish physical multicore scaling.
-5. **Phase 5 — future:** visualizations of actual CPU, memory, cache and multicore results.
+5. **Phase 5 — implemented:** local Streamlit/Pandas/Plotly dashboard, safe schema-aware
+   JSON/CSV imports, seven views, authentic archived demo receipts, filtered exports,
+   null-aware hardware metrics and explicitly theoretical Amdahl exploration.
+   Visual browser QA and authenticated physical-host equivalence are not established.
 6. **Phase 6 — future:** academic report, presentation, architecture diagrams,
    reproducible demonstration and viva preparation.
 
