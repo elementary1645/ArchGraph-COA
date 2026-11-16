@@ -1,0 +1,59 @@
+Internal ctest changing into directory: /workspaces/ArchGraph-COA/build/phase3-release
+Test project /workspaces/ArchGraph-COA/build/phase3-release
+      Start  1: project_info
+ 1/23 Test  #1: project_info .....................   Passed    0.01 sec
+      Start  2: openmp
+ 2/23 Test  #2: openmp ...........................   Passed    0.01 sec
+      Start  3: csr_graph
+ 3/23 Test  #3: csr_graph ........................   Passed    0.01 sec
+      Start  4: edge_list_io
+ 4/23 Test  #4: edge_list_io .....................   Passed    0.01 sec
+      Start  5: dijkstra
+ 5/23 Test  #5: dijkstra .........................   Passed    0.15 sec
+      Start  6: delta_stepping
+ 6/23 Test  #6: delta_stepping ...................   Passed    3.14 sec
+      Start  7: cli_help
+ 7/23 Test  #7: cli_help .........................   Passed    0.01 sec
+      Start  8: cli_version
+ 8/23 Test  #8: cli_version ......................   Passed    0.00 sec
+      Start  9: cli_cpu
+ 9/23 Test  #9: cli_cpu ..........................   Passed    0.01 sec
+      Start 10: cli_invalid
+10/23 Test #10: cli_invalid ......................   Passed    0.00 sec
+      Start 11: cli_sssp
+11/23 Test #11: cli_sssp .........................   Passed    0.75 sec
+      Start 12: workload_artifacts
+12/23 Test #12: workload_artifacts ...............   Passed    2.39 sec
+      Start 13: workload_loader
+13/23 Test #13: workload_loader ..................   Passed    0.19 sec
+      Start 14: benchmark_integration
+14/23 Test #14: benchmark_integration ............   Passed    0.11 sec
+      Start 15: perf_unit
+15/23 Test #15: perf_unit ........................   Passed    0.00 sec
+      Start 16: profiling_integration
+16/23 Test #16: profiling_integration ............   Passed    0.13 sec
+      Start 17: perf_hardware
+17/23 Test #17: perf_hardware ....................***Skipped   0.01 sec
+      Start 18: layout
+18/23 Test #18: layout ...........................   Passed    0.00 sec
+      Start 19: locality
+19/23 Test #19: locality .........................   Passed    0.00 sec
+      Start 20: cache
+20/23 Test #20: cache ............................   Passed    0.00 sec
+      Start 21: memory_perf
+21/23 Test #21: memory_perf ......................   Passed    0.00 sec
+      Start 22: memory_experiments
+22/23 Test #22: memory_experiments ...............   Passed    0.21 sec
+      Start 23: memory_hardware
+23/23 Test #23: memory_hardware ..................***Skipped   0.00 sec
+
+100% tests passed, 0 tests failed out of 23
+
+Label Time Summary:
+hardware    =   0.01 sec*proc (2 tests)
+
+Total Test time (real) =   7.18 sec
+
+The following tests did not run:
+	 17 - perf_hardware (Skipped)
+	 23 - memory_hardware (Skipped)

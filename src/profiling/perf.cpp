@@ -22,14 +22,11 @@ class SystemBackend final : public Backend {
 public:
     int open(Event event, int group_fd) override {
 #ifdef __linux__
-        constexpr std::array<std::uint64_t, event_count> configs{{
-            PERF_COUNT_HW_CPU_CYCLES, PERF_COUNT_HW_INSTRUCTIONS,
-            PERF_COUNT_HW_CACHE_REFERENCES, PERF_COUNT_HW_CACHE_MISSES,
-            PERF_COUNT_HW_BRANCH_INSTRUCTIONS, PERF_COUNT_HW_BRANCH_MISSES}};
+        const auto event_config = encoding(event);
         perf_event_attr attr{};
-        attr.type = PERF_TYPE_HARDWARE;
+        attr.type = event_config.type;
         attr.size = sizeof(attr);
-        attr.config = configs.at(static_cast<std::size_t>(event));
+        attr.config = event_config.config;
         attr.disabled = 1;
         attr.exclude_kernel = 1;
         attr.exclude_hv = 1;
@@ -80,7 +77,7 @@ void integer(std::ostream& out, const std::optional<std::uint64_t>& value) {
 }
 Backend& system_backend() { static SystemBackend backend; return backend; }
 const char* name(Event event) {
-    constexpr std::array<const char*, event_count> names{{"cpu_cycles", "instructions", "cache_references", "cache_misses", "branch_instructions", "branch_misses"}};
+    constexpr std::array<const char*, 12> names{{"cpu_cycles", "instructions", "cache_references", "cache_misses", "branch_instructions", "branch_misses", "l1d_read_accesses", "l1d_read_misses", "ll_read_accesses", "ll_read_misses", "dtlb_read_accesses", "dtlb_read_misses"}};
     return names.at(static_cast<std::size_t>(event));
 }
 std::string json_quote(const std::string& value) {
@@ -93,10 +90,29 @@ std::string json_quote(const std::string& value) {
     }
     return out + '"';
 }
-Counters detect(Backend& backend) {
+Event event_at(std::size_t index, EventSet set) {
+    if (index >= event_count) { throw std::out_of_range("counter slot"); }
+    return static_cast<Event>(index + (set == EventSet::memory ? event_count : 0));
+}
+Encoding encoding(Event event) {
+#ifdef __linux__
+    constexpr std::array<std::uint64_t, event_count> generic{{PERF_COUNT_HW_CPU_CYCLES, PERF_COUNT_HW_INSTRUCTIONS,
+        PERF_COUNT_HW_CACHE_REFERENCES, PERF_COUNT_HW_CACHE_MISSES, PERF_COUNT_HW_BRANCH_INSTRUCTIONS, PERF_COUNT_HW_BRANCH_MISSES}};
+    const auto index = static_cast<std::size_t>(event);
+    if (index < event_count) { return {PERF_TYPE_HARDWARE, generic.at(index)}; }
+    if (index >= 12) { throw std::out_of_range("hardware event"); }
+    const std::array<std::uint64_t, 3> levels{{PERF_COUNT_HW_CACHE_L1D, PERF_COUNT_HW_CACHE_LL, PERF_COUNT_HW_CACHE_DTLB}};
+    const auto slot = index - event_count;
+    return {PERF_TYPE_HW_CACHE, levels.at(slot / 2) | (static_cast<std::uint64_t>(PERF_COUNT_HW_CACHE_OP_READ) << 8) |
+        (static_cast<std::uint64_t>(slot % 2 == 0 ? PERF_COUNT_HW_CACHE_RESULT_ACCESS : PERF_COUNT_HW_CACHE_RESULT_MISS) << 16)};
+#else
+    (void)event; return {0, 0}; // Backend returns ENOSYS before using this on non-Linux.
+#endif
+}
+Counters detect(Backend& backend, EventSet set) {
     Counters counters;
     for (std::size_t i = 0; i < event_count; ++i) {
-        const int fd = backend.open(static_cast<Event>(i), -1);
+        const int fd = backend.open(event_at(i, set), -1);
         if (fd >= 0) {
             backend.close(fd);
             counters[i].status = "ready";
@@ -109,7 +125,7 @@ Counters detect(Backend& backend) {
     }
     return counters;
 }
-Session::Session(Backend& backend) : backend_(backend) {
+Session::Session(Backend& backend, EventSet set) : backend_(backend) {
     // Each event is attempted even if its partner failed. Surviving events become
     // singleton groups; unavailable partners never acquire fabricated values.
     try {
@@ -117,7 +133,7 @@ Session::Session(Backend& backend) : backend_(backend) {
             auto& group = groups_[pair];
             for (std::size_t offset = 0; offset < 2; ++offset) {
                 const auto index = pair * 2 + offset;
-                const int fd = backend_.open(static_cast<Event>(index), group.size == 0 ? -1 : group.fds[0]);
+                const int fd = backend_.open(event_at(index, set), group.size == 0 ? -1 : group.fds[0]);
                 auto& counter = counters_[index];
                 if (fd < 0) {
                     counter.error_number = errno;
@@ -227,12 +243,12 @@ std::string overall_status(const Counters& counters) {
     for (const auto& c : counters) { if (c.status != first) { return "unavailable"; } }
     return first;
 }
-std::string counters_json(const Counters& counters) {
+std::string counters_json(const Counters& counters, EventSet set) {
     std::ostringstream out; out << '{';
     for (std::size_t i = 0; i < event_count; ++i) {
         if (i != 0) { out << ','; }
         const auto& c = counters[i];
-        out << json_quote(name(static_cast<Event>(i))) << ":{\"status\":" << json_quote(c.status)
+        out << json_quote(name(event_at(i, set))) << ":{\"status\":" << json_quote(c.status)
             << ",\"errno\":" << c.error_number << ",\"diagnostic\":" << json_quote(c.diagnostic) << ",\"raw\":";
         integer(out, c.raw); out << ",\"time_enabled_ns\":"; integer(out, c.time_enabled);
         out << ",\"time_running_ns\":"; integer(out, c.time_running);
@@ -240,7 +256,13 @@ std::string counters_json(const Counters& counters) {
     }
     out << '}'; return out.str();
 }
-std::string derived_json(const Counters& c) {
+std::string derived_json(const Counters& c, EventSet set) {
+    if (set == EventSet::memory) {
+        std::ostringstream out; out << "{\"l1d_read_miss_ratio\":"; number(out, ratio(c[1],c[0]));
+        out << ",\"ll_read_miss_ratio\":"; number(out, ratio(c[3],c[2]));
+        out << ",\"dtlb_read_miss_ratio\":"; number(out, ratio(c[5],c[4]));
+        out << '}'; return out.str();
+    }
     std::ostringstream out; out << "{\"ipc\":"; number(out, ratio(c[1], c[0]));
     out << ",\"cpi\":"; number(out, ratio(c[0], c[1]));
     out << ",\"cache_miss_ratio\":"; number(out, ratio(c[3], c[2]));
@@ -276,6 +298,7 @@ std::string diagnostics() {
     out << ",\"perf_event_paranoid\":";
     if (setting >> paranoid) { out << paranoid; } else { out << "null"; }
     out << ",\"availability\":" << counters_json(independent)
+        << ",\"memory_event_availability\":" << counters_json(detect(system_backend(), EventSet::memory), EventSet::memory)
         << ",\"group_availability\":" << counters_json(grouped)
         << ",\"probe_counters\":" << counters_json(readings)
         << ",\"probe_workload\":\"9999-iteration diagnostic arithmetic; not graph benchmark data\""

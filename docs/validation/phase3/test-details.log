@@ -1,0 +1,133 @@
+Internal ctest changing into directory: /workspaces/ArchGraph-COA/build/phase3-debug
+UpdateCTestConfiguration  from :/workspaces/ArchGraph-COA/build/phase3-debug/DartConfiguration.tcl
+Parse Config file:/workspaces/ArchGraph-COA/build/phase3-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/workspaces/ArchGraph-COA/build/phase3-debug/DartConfiguration.tcl
+Parse Config file:/workspaces/ArchGraph-COA/build/phase3-debug/DartConfiguration.tcl
+Test project /workspaces/ArchGraph-COA/build/phase3-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 12
+    Start 12: workload_artifacts
+
+12: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_workloads.py"
+12: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+12: Environment variables: 
+12:  PYTHONDONTWRITEBYTECODE=1
+12:  OMP_NUM_THREADS=2
+12:  OMP_THREAD_LIMIT=2
+12:  OMP_DYNAMIC=FALSE
+12: Test timeout computed to be: 120
+12: ......................
+12: ----------------------------------------------------------------------
+12: Ran 22 tests in 2.491s
+12: 
+12: OK
+1/7 Test #12: workload_artifacts ...............   Passed    2.66 sec
+test 13
+    Start 13: workload_loader
+
+13: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_workload_loader.py" "/workspaces/ArchGraph-COA/build/phase3-debug/archgraph"
+13: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+13: Environment variables: 
+13:  PYTHONDONTWRITEBYTECODE=1
+13:  OMP_NUM_THREADS=2
+13:  OMP_THREAD_LIMIT=2
+13:  OMP_DYNAMIC=FALSE
+13: Test timeout computed to be: 120
+13: .
+13: ----------------------------------------------------------------------
+13: Ran 1 test in 0.315s
+13: 
+13: OK
+2/7 Test #13: workload_loader ..................   Passed    0.54 sec
+test 14
+    Start 14: benchmark_integration
+
+14: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_benchmark.py" "/workspaces/ArchGraph-COA/build/phase3-debug/archgraph"
+14: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+14: Environment variables: 
+14:  PYTHONDONTWRITEBYTECODE=1
+14:  OMP_NUM_THREADS=2
+14:  OMP_THREAD_LIMIT=2
+14:  OMP_DYNAMIC=FALSE
+14: Test timeout computed to be: 120
+14: ..
+14: ----------------------------------------------------------------------
+14: Ran 2 tests in 0.075s
+14: 
+14: OK
+3/7 Test #14: benchmark_integration ............   Passed    0.28 sec
+test 16
+    Start 16: profiling_integration
+
+16: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_profiling.py" "/workspaces/ArchGraph-COA/build/phase3-debug/archgraph"
+16: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+16: Environment variables: 
+16:  OMP_NUM_THREADS=2
+16:  OMP_THREAD_LIMIT=2
+16:  OMP_DYNAMIC=FALSE
+16: Test timeout computed to be: 60
+16: ..
+16: ----------------------------------------------------------------------
+16: Ran 2 tests in 0.185s
+16: 
+16: OK
+4/7 Test #16: profiling_integration ............   Passed    0.37 sec
+test 17
+    Start 17: perf_hardware
+
+17: Test command: /workspaces/ArchGraph-COA/build/phase3-debug/tests/test_perf_hardware
+17: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+17: Test timeout computed to be: 30
+17: {"cpu_cycles":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"instructions":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"cache_references":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"cache_misses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"branch_instructions":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"branch_misses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null}}
+17: SKIP: hardware cycle/instruction pair inaccessible or not reliably scheduled
+5/7 Test #17: perf_hardware ....................***Skipped   0.01 sec
+test 22
+    Start 22: memory_experiments
+
+22: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_memory_experiments.py" "/workspaces/ArchGraph-COA/build/phase3-debug/archgraph"
+22: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+22: Environment variables: 
+22:  OMP_NUM_THREADS=2
+22:  OMP_THREAD_LIMIT=2
+22:  OMP_DYNAMIC=FALSE
+22: Test timeout computed to be: 120
+22: .....
+22: ----------------------------------------------------------------------
+22: Ran 5 tests in 0.167s
+22: 
+22: OK
+6/7 Test #22: memory_experiments ...............   Passed    0.30 sec
+test 23
+    Start 23: memory_hardware
+
+23: Test command: /workspaces/ArchGraph-COA/build/phase3-debug/tests/test_memory_hardware
+23: Working Directory: /workspaces/ArchGraph-COA/build/phase3-debug/tests
+23: Test timeout computed to be: 30
+23: {"l1d_read_accesses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"l1d_read_misses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"ll_read_accesses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"ll_read_misses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"dtlb_read_accesses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null},"dtlb_read_misses":{"status":"permission_denied","errno":13,"diagnostic":"Permission denied","raw":null,"time_enabled_ns":null,"time_running_ns":null,"value":null}}
+23: SKIP: no reliably scheduled L1D/LL/DTLB read pair
+7/7 Test #23: memory_hardware ..................***Skipped   0.01 sec
+
+The following tests passed:
+	workload_artifacts
+	workload_loader
+	benchmark_integration
+	profiling_integration
+	perf_hardware
+	memory_experiments
+	memory_hardware
+
+100% tests passed, 0 tests failed out of 7
+
+Label Time Summary:
+hardware    =   0.02 sec*proc (2 tests)
+
+Total Test time (real) =   4.19 sec
+
+The following tests did not run:
+	 17 - perf_hardware (Skipped)
+	 23 - memory_hardware (Skipped)

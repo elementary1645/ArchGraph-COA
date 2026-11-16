@@ -1,4 +1,5 @@
 #include "archgraph/analysis.hpp"
+#include "archgraph/experiments.hpp"
 #include "archgraph/perf.hpp"
 #include "archgraph/benchmark.hpp"
 #include "dynagraph/project_info.hpp"
@@ -38,10 +39,17 @@ int main(int argc, char* argv[]) {
                      "Usage: archgraph --cpu | --counter-diagnostics\n"
                      "Usage: archgraph bench <SSSP options> [--repetitions 5] [--warmups 1] [--hardware-counters]\n"
                      "Bench reports verified wall nanoseconds; optional user-thread PMU counters support Dijkstra only.\n";
+        std::cout << archgraph::experiment_help();
         return 0;
     }
 
     try {
+        if (argc >= 2) {
+            const std::string_view command(argv[1]);
+            if (command == "memory" || command == "locality" || command == "cache-study" || command == "compare-layouts") {
+                return archgraph::experiment_cli(argc,argv,std::cout);
+            }
+        }
         const bool benchmark = argc >= 2 && std::string_view(argv[1]) == "bench";
         if (argc < 2 || (!benchmark && std::string_view(argv[1]) != "sssp")) {
             throw std::invalid_argument("Unsupported command");

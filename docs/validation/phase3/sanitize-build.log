@@ -1,0 +1,31 @@
+[  2%] Building CXX object CMakeFiles/archgraph_engine.dir/src/experiments/layout.cpp.o
+[  4%] Linking CXX static library libarchgraph_engine.a
+[ 36%] Built target archgraph_engine
+[ 38%] Linking CXX executable test_project_info
+[ 40%] Linking CXX executable archgraph
+[ 43%] Built target test_project_info
+[ 45%] Linking CXX executable test_openmp
+[ 47%] Built target test_openmp
+[ 50%] Linking CXX executable test_csr_graph
+[ 52%] Built target archgraph
+[ 54%] Linking CXX executable test_edge_list_io
+[ 56%] Built target test_csr_graph
+[ 59%] Linking CXX executable test_dijkstra
+[ 61%] Built target test_edge_list_io
+[ 63%] Linking CXX executable test_delta_stepping
+[ 65%] Built target test_dijkstra
+[ 68%] Linking CXX executable test_perf
+[ 70%] Built target test_delta_stepping
+[ 72%] Linking CXX executable test_perf_hardware
+[ 75%] Built target test_perf
+[ 77%] Linking CXX executable test_layout
+[ 79%] Built target test_perf_hardware
+[ 81%] Linking CXX executable test_locality
+[ 84%] Built target test_layout
+[ 86%] Linking CXX executable test_cache
+[ 88%] Built target test_locality
+[ 90%] Linking CXX executable test_memory_perf
+[ 93%] Built target test_cache
+[ 95%] Linking CXX executable test_memory_hardware
+[ 97%] Built target test_memory_perf
+[100%] Built target test_memory_hardware

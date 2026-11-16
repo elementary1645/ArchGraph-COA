@@ -3,8 +3,8 @@
 | COA concept | Implemented connection | Deferred measurement |
 | --- | --- | --- |
 | Instruction execution | Sequential Dijkstra can collect real cycles/instructions and IPC/CPI when permitted; software work counts remain separate | Cross-platform PMU fidelity and controlled architectural comparisons |
-| Cache hierarchy | CSR gives contiguous arrays; generic hardware cache references/misses are available when supported | Per-level cache events and controlled locality experiments |
-| Memory organization | Explicit CSR ownership, uint32 weights and uint64 labels expose representation and working-set choices | Bandwidth, NUMA and working-set sweeps |
+| Cache hierarchy | Discovered level/line/sharing metadata sizes bounded studies; optional generic and L1D/LL read pairs retain availability status | Validated PMU fidelity and evidence-supported capacity/latency attribution |
+| Memory organization | CSR/adjacency accounting and equal-edge traversal; indexed spatial and temporal kernels record reads/checksums/footprints | Peak bandwidth, NUMA placement and controlled physical-memory attribution |
 | Multicore processing | OpenMP teams, barriers and atomic relaxation implement parallel SSSP; correctness is checked against Dijkstra | Controlled scaling, efficiency and synchronization costs |
 | Performance analysis | Repeated monotonic wall timing, deterministic input hashes and CPU/build metadata | Validated worker aggregation and statistically qualified conclusions |
 
@@ -18,3 +18,14 @@ paired events grouped, records multiplexing times and leaves missing/invalid rat
 null. Neither generic cache counters nor retired instruction counts reveal per-level
 cache behavior or individual instruction latency. OpenMP hardware totals are
 explicitly unsupported; see [counter scope](PERFORMANCE_COUNTERS.md).
+
+
+Phase 3 connects spatial locality to sequential/strided/random index permutations,
+and temporal locality to repeated reads of a configurable prefix. The index stream
+has its own cache footprint; volatile scalar loads ensure consumption while limiting
+vectorization. Metadata-derived studies span data sizes near reported capacities
+where the configured cap permits; they report omitted targets and do not prove
+cache-level transitions from timing. The separate DTLB pair concerns address
+translation. Memory reports distinguish logical bytes, capacity/control estimates,
+unknown allocator overhead and coarse whole-process RSS. Both graph layouts reject
+duplicate directed edges and produce the same verified shortest paths.

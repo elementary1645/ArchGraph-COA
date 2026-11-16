@@ -6,7 +6,11 @@
 #include <string>
 
 namespace archgraph::perf {
-enum class Event : unsigned { cycles, instructions, cache_references, cache_misses, branches, branch_misses };
+enum class Event : unsigned { cycles, instructions, cache_references, cache_misses, branches, branch_misses, l1d_reads, l1d_read_misses, ll_reads, ll_read_misses, dtlb_reads, dtlb_read_misses };
+enum class EventSet { generic, memory };
+Event event_at(std::size_t index, EventSet set);
+struct Encoding { std::uint32_t type; std::uint64_t config; };
+Encoding encoding(Event event);
 constexpr std::size_t event_count = 6;
 const char* name(Event event);
 enum class Action { reset, enable, disable };
@@ -28,11 +32,11 @@ struct Counter {
     std::optional<double> value;
 };
 using Counters = std::array<Counter, event_count>;
-Counters detect(Backend& backend = system_backend());
+Counters detect(Backend& backend = system_backend(), EventSet set = EventSet::generic);
 // No copy/move: descriptors and backend lifetime stay bound to the creating thread.
 class Session {
 public:
-    explicit Session(Backend& backend = system_backend());
+    explicit Session(Backend& backend = system_backend(), EventSet set = EventSet::generic);
     ~Session();
     Session(const Session&) = delete;
     Session& operator=(const Session&) = delete;
@@ -54,8 +58,8 @@ private:
 };
 Counter scale(std::uint64_t raw, std::uint64_t enabled, std::uint64_t running);
 std::optional<double> ratio(const Counter& numerator, const Counter& denominator);
-std::string counters_json(const Counters& counters);
-std::string derived_json(const Counters& counters);
+std::string counters_json(const Counters& counters, EventSet set = EventSet::generic);
+std::string derived_json(const Counters& counters, EventSet set = EventSet::generic);
 std::string overall_status(const Counters& counters);
 Counters unavailable(const std::string& status, const std::string& reason);
 std::string diagnostics();
