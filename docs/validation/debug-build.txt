@@ -1,0 +1,21 @@
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspaces/ArchGraph-COA/build/debug
+[  4%] Building CXX object CMakeFiles/archgraph_engine.dir/src/benchmark/static.cpp.o
+[  8%] Linking CXX static library libarchgraph_engine.a
+[ 41%] Built target archgraph_engine
+[ 50%] Linking CXX executable test_project_info
+[ 50%] Building CXX object CMakeFiles/archgraph.dir/apps/archgraph.cpp.o
+[ 54%] Built target test_project_info
+[ 58%] Linking CXX executable test_openmp
+[ 62%] Built target test_openmp
+[ 66%] Linking CXX executable test_csr_graph
+[ 70%] Built target test_csr_graph
+[ 75%] Linking CXX executable test_edge_list_io
+[ 79%] Built target test_edge_list_io
+[ 83%] Linking CXX executable test_dijkstra
+[ 87%] Linking CXX executable archgraph
+[ 91%] Built target test_dijkstra
+[ 95%] Linking CXX executable test_delta_stepping
+[ 95%] Built target archgraph
+[100%] Built target test_delta_stepping

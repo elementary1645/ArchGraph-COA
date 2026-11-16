@@ -1,0 +1,72 @@
+Internal ctest changing into directory: /workspaces/ArchGraph-COA/build/debug
+UpdateCTestConfiguration  from :/workspaces/ArchGraph-COA/build/debug/DartConfiguration.tcl
+Parse Config file:/workspaces/ArchGraph-COA/build/debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/workspaces/ArchGraph-COA/build/debug/DartConfiguration.tcl
+Parse Config file:/workspaces/ArchGraph-COA/build/debug/DartConfiguration.tcl
+Test project /workspaces/ArchGraph-COA/build/debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 12
+    Start 12: workload_artifacts
+
+12: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_workloads.py"
+12: Working Directory: /workspaces/ArchGraph-COA/build/debug/tests
+12: Environment variables: 
+12:  PYTHONDONTWRITEBYTECODE=1
+12:  OMP_NUM_THREADS=2
+12:  OMP_THREAD_LIMIT=2
+12:  OMP_DYNAMIC=FALSE
+12: Test timeout computed to be: 120
+12: ......................
+12: ----------------------------------------------------------------------
+12: Ran 22 tests in 1.289s
+12: 
+12: OK
+1/3 Test #12: workload_artifacts ...............   Passed    1.41 sec
+test 13
+    Start 13: workload_loader
+
+13: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_workload_loader.py" "/workspaces/ArchGraph-COA/build/debug/archgraph"
+13: Working Directory: /workspaces/ArchGraph-COA/build/debug/tests
+13: Environment variables: 
+13:  PYTHONDONTWRITEBYTECODE=1
+13:  OMP_NUM_THREADS=2
+13:  OMP_THREAD_LIMIT=2
+13:  OMP_DYNAMIC=FALSE
+13: Test timeout computed to be: 120
+13: .
+13: ----------------------------------------------------------------------
+13: Ran 1 test in 0.087s
+13: 
+13: OK
+2/3 Test #13: workload_loader ..................   Passed    0.22 sec
+test 14
+    Start 14: benchmark_integration
+
+14: Test command: /home/codespace/.python/current/bin/python3 "-B" "/workspaces/ArchGraph-COA/tests/test_benchmark.py" "/workspaces/ArchGraph-COA/build/debug/archgraph"
+14: Working Directory: /workspaces/ArchGraph-COA/build/debug/tests
+14: Environment variables: 
+14:  PYTHONDONTWRITEBYTECODE=1
+14:  OMP_NUM_THREADS=2
+14:  OMP_THREAD_LIMIT=2
+14:  OMP_DYNAMIC=FALSE
+14: Test timeout computed to be: 120
+14: ..
+14: ----------------------------------------------------------------------
+14: Ran 2 tests in 0.023s
+14: 
+14: OK
+3/3 Test #14: benchmark_integration ............   Passed    0.10 sec
+
+The following tests passed:
+	workload_artifacts
+	workload_loader
+	benchmark_integration
+
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =   1.72 sec
