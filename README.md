@@ -1,9 +1,9 @@
 # ArchGraph-COA
 
 A C++17/OpenMP CPU Architecture-Aware Graph Processing and Performance Analyzer.
-Phase 3 adds deterministic spatial/temporal locality experiments, discovered-cache
-working-set studies, CSR versus adjacency-list memory accounting and verified SSSP
-comparisons. Phase 2 hardware profiling and Phase 1 graph correctness remain intact.
+Phase 5 adds an optional interactive Streamlit dashboard over verified Phase 2–4
+results, including CPU counters, memory/locality and multicore scaling. The C++
+engine and earlier correctness/profiling workflows remain independent of UI dependencies.
 Verified wall timing continues when PMU access is denied; no cache transition or
 speedup is inferred from elapsed time alone.
 
@@ -145,3 +145,27 @@ host exposes two SMT contexts on one physical core, so it cannot demonstrate
 scaling across independent physical cores. See [live demo and result contract](docs/SCALING_EXPERIMENTS.md),
 [multicore architecture](docs/MULTICORE_ARCHITECTURE.md),
 [Amdahl assumptions](docs/AMDAHLS_LAW.md) and [validation](docs/PHASE4_VALIDATION.md).
+
+## Phase 5: interactive performance dashboard
+
+Python 3.11+ is required only for this optional UI. From the repository root:
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dashboard.txt
+python -m streamlit run dashboard/app.py --server.address 127.0.0.1
+python -m pytest dashboard/tests -q
+```
+
+Seven views cover CPU overview, hardware/wall-clock performance, memory accounting,
+cache/locality, multicore scaling, a theoretical Amdahl explorer and an experiment
+explorer with safe uploads, filters and downloads. Demo mode uses 13 authentic,
+checksum-checked archived receipts; it works with denied PMU access. Unknown values
+remain unavailable, distinct environments stay separate and one-thread delta-stepping
+is its own scaling baseline. No graph algorithm changes or cloud deployment are required.
+
+See the [dashboard guide](docs/DASHBOARD_GUIDE.md),
+[five-minute professor demo](docs/DEMO_WORKFLOW.md) and
+[Phase 5 validation](docs/PHASE5_VALIDATION.md) for schemas, provenance, limitations
+and test evidence. CMake/CTest do not require the dashboard packages.

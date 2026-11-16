@@ -38,3 +38,14 @@ worker affinity uses sparse allowed CPU IDs and restores original masks. Median
 same-algorithm speedup and efficiency accompany explicitly assumed Amdahl curves.
 The validation machine has one visible physical core with two SMT contexts, so
 these results demonstrate methodology and overhead, not independent-core scaling.
+
+Phase 5 makes these connections inspectable in seven dashboard views. CPU overview
+separates physical/logical contexts and visible topology restrictions. Performance
+views keep real PMU counts/ratios distinct from wall time and expose denied or
+unsupported states. Memory charts label representation accounting and whole-process
+RSS separately. Locality plots show active footprints and metadata capacity markers
+without claiming cache transitions. Multicore views preserve same-algorithm baselines,
+observed teams and variability. The Amdahl explorer labels f as assumed and overlays
+only compatible delta-stepping observations. Experiment explorer retains provenance,
+original values, filter/export contracts and environment incompatibility warnings.
+These visualizations support explanation, not new causal or statistical claims.

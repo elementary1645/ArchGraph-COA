@@ -1,0 +1,227 @@
+{
+  "captured_at_utc": "2026-11-16T15:14:49.373796+00:00",
+  "cli": "build/phase5-release/archgraph",
+  "receipts": [
+    {
+      "path": "docs/validation/phase5/receipts/memory.json",
+      "sha256": "eb6a64bd3769e778bd84c345e9271d94f78fbffcf69cc94c7d2369fb7e9cd1e2",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "memory",
+        "--input",
+        "/tmp/archgraph-phase5-jrrmpq9u/chain/graph.txt"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/layouts.json",
+      "sha256": "b9e80ef953f96b2bc689b51b853ff70f701e42626cb831fe2a425917ad5ba3dc",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "compare-layouts",
+        "--input",
+        "/tmp/archgraph-phase5-jrrmpq9u/chain/graph.txt",
+        "--source",
+        "0",
+        "--runs",
+        "5"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-sequential.json",
+      "sha256": "9cd60730173616a8c0f5153db0d3e69842fcb1a6e233f65ac0959820e71e8f19",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "sequential",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-strided.json",
+      "sha256": "12ec928f90ff4855bd9018d6ee2fa3bfd7e7ada8ca95bfd2cc531f5c7344fbe4",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "strided",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters",
+        "--stride",
+        "16"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-random.json",
+      "sha256": "10c1767a6b978a43b5776728f959db624a79631b8babec17a447624621116093",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "random",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/locality-temporal.json",
+      "sha256": "3edc320a804127121915b4ff2424ecb157c2002f0de9d18f341cf0f74fb4381a",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "locality",
+        "--pattern",
+        "temporal",
+        "--size",
+        "1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters",
+        "--working-set",
+        "4096"
+      ]
+    },
+    {
+      "path": "docs/validation/phase5/receipts/cache-study.json",
+      "sha256": "e79a05f0b289a1af7789cb070ff23a1e20088e1f70e1f18d5fcf39f2d26181ea",
+      "origin": "Archived Phase 5 validation measurement \u00b7 local Release CLI \u00b7 16 November 2026",
+      "command": [
+        "build/phase5-release/archgraph",
+        "cache-study",
+        "--sizes",
+        "4096,32768,262144,1048576",
+        "--accesses",
+        "131072",
+        "--seed",
+        "42",
+        "--runs",
+        "5",
+        "--hardware-counters"
+      ]
+    }
+  ],
+  "graph_manifest": {
+    "artifacts": {
+      "graph": {
+        "path": "graph.txt",
+        "sha256": "e7338d8f282737a360ae0f65fd731f7c576187e624e5fb94904246a08336ea6c"
+      },
+      "trace": {
+        "path": "trace.txt",
+        "sha256": "5e2355594505cdc6536fe11de6fd7ba158578105715c2b9b32445925e72c9d38"
+      }
+    },
+    "configuration": {
+      "graph": {
+        "family": "chain",
+        "vertices": 8
+      },
+      "schema_version": 1,
+      "seeds": {
+        "graph": "1",
+        "source": "3",
+        "trace": "4",
+        "weight": "2"
+      },
+      "source": {
+        "kind": "explicit",
+        "vertex": 0
+      },
+      "split": "development",
+      "trace": {
+        "count": 12,
+        "max_decrement": 2,
+        "schedule": [
+          "strict",
+          "repeat",
+          "equal"
+        ]
+      },
+      "weights": {
+        "kind": "positive_uniform",
+        "max": 32,
+        "min": 16
+      },
+      "workload_id": "chain-v1-example"
+    },
+    "counts": {
+      "edges": 7,
+      "updates": 12,
+      "vertices": 8
+    },
+    "final_graph_sha256": "be98fdabd7e08cd2e88046fbc4269a9c95cd2481040279c981ffac19d57af927",
+    "generator_versions": {
+      "graph": "dynagraph-graph-v1",
+      "prng": "splitmix64-v1",
+      "trace": "dynagraph-trace-v1"
+    },
+    "schema_version": 1,
+    "source": 0,
+    "split": "development",
+    "workload_id": "chain-v1-example"
+  },
+  "graph_spec": {
+    "schema_version": 1,
+    "workload_id": "chain-v1-example",
+    "split": "development",
+    "seeds": {
+      "graph": "1",
+      "weight": "2",
+      "source": "3",
+      "trace": "4"
+    },
+    "graph": {
+      "family": "chain",
+      "vertices": 8
+    },
+    "weights": {
+      "kind": "positive_uniform",
+      "min": 16,
+      "max": 32
+    },
+    "source": {
+      "kind": "explicit",
+      "vertex": 0
+    },
+    "trace": {
+      "count": 12,
+      "schedule": [
+        "strict",
+        "repeat",
+        "equal"
+      ],
+      "max_decrement": 2
+    }
+  }
+}

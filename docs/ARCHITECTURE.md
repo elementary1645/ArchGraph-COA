@@ -56,7 +56,7 @@ optionally collect calling-thread user-space counters for sequential Dijkstra;
 OpenMP hardware aggregation remains unsupported. Median wall time, per-run counter
 records, loaded-CSR identity and build provenance extend the existing JSON format.
 See CPU_PROFILING.md and PERFORMANCE_COUNTERS.md for exact scopes and boundaries.
-Phase 4 adds thread scaling and kernel affinity experiments below; visualization remains future work.
+Phase 4 adds thread scaling and kernel affinity experiments below; Phase 5 adds the visualization layer below.
 
 
 ## Phase 3 cache and memory experiments
@@ -99,3 +99,29 @@ The scaling command records external OpenMP placement without claiming binding
 verification. Hardware counter worker aggregation remains unsupported. See
 [MULTICORE_ARCHITECTURE.md](MULTICORE_ARCHITECTURE.md) and
 [SCALING_EXPERIMENTS.md](SCALING_EXPERIMENTS.md) for boundaries and limitations.
+
+## Phase 5 optional analytics dashboard
+
+`dashboard/app.py` is a local Streamlit entrypoint; `views.py` presents seven
+navigation views. `components/ui.py` handles reusable provenance, facts and filters.
+`charts/` contains CPU, memory, locality, scaling and theoretical Amdahl Plotly
+figures. `data/schemas.py`, `validation.py` and `loader.py` recognize bounded
+producer contracts and a checksum-checked repository-local catalog; uploads are
+bytes, never paths or executable objects. `transform.py` isolates pure calculations,
+compatibility fingerprints, null-aware counters and non-pooled grouping.
+`export.py` provides deterministic formula-safe CSV and lossless JSON selections.
+
+The original producer document remains intact, including unknown fields and uint64
+integers. Diagnostic PMU probes are excluded; failed events remain null; IPC/CPI
+require validated same-group values and scheduling metadata. Wall time is distinct
+from counts, memory accounting from whole-process RSS, and theory from observations.
+Multicore ratios require complete measured blocks and the correct same-algorithm
+baseline. Standalone producer CSV lacks provenance, so it enables raw inspection
+without speedup inference. Explicit locality comparisons use compatibility checks
+and separate configuration traces; documents are never silently pooled.
+
+`requirements-dashboard.txt`, `.streamlit/config.toml`, pytest tests and a separate
+GitHub Actions dashboard workflow are optional. CMake, graph algorithms, imported
+headers and existing CTests are unchanged. Demo sources reuse committed Phase 2/4
+receipts plus actual Phase 3-style CLI captures under `docs/validation/phase5/`.
+See [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md) for the complete import/trust contract.
